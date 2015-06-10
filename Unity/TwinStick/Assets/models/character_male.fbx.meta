@@ -516,7 +516,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -616,7 +616,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -716,107 +716,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: Armature
-        weight: 1
-      - path: Armature/arm_IK_L
-        weight: 1
-      - path: Armature/arm_IK_L/arm_IK_L_end
-        weight: 1
-      - path: Armature/arm_IK_R
-        weight: 1
-      - path: Armature/arm_IK_R/arm_IK_R_end
-        weight: 1
-      - path: Armature/elbow_target_L
-        weight: 1
-      - path: Armature/elbow_target_L/elbow_target_L_end
-        weight: 1
-      - path: Armature/elbow_target_R
-        weight: 1
-      - path: Armature/elbow_target_R/elbow_target_R_end
-        weight: 1
-      - path: Armature/knee_target_L
-        weight: 1
-      - path: Armature/knee_target_L/knee_target_L_end
-        weight: 1
-      - path: Armature/knee_target_R
-        weight: 1
-      - path: Armature/knee_target_R/knee_target_R_end
-        weight: 1
-      - path: Armature/leg_IK_L
-        weight: 1
-      - path: Armature/leg_IK_L/leg_IK_L_end
-        weight: 1
-      - path: Armature/leg_IK_R
-        weight: 1
-      - path: Armature/leg_IK_R/leg_IK_R_end
-        weight: 1
-      - path: Armature/spine
-        weight: 1
-      - path: Armature/spine/chest
-        weight: 1
-      - path: Armature/spine/chest/arm_upper_L
-        weight: 1
-      - path: Armature/spine/chest/arm_upper_L/arm_lower_L
-        weight: 1
-      - path: Armature/spine/chest/arm_upper_L/arm_lower_L/arm_lower_L_end
-        weight: 1
-      - path: Armature/spine/chest/arm_upper_R
-        weight: 1
-      - path: Armature/spine/chest/arm_upper_R/arm_lower_R
-        weight: 1
-      - path: Armature/spine/chest/arm_upper_R/arm_lower_R/arm_lower_R_end
-        weight: 1
-      - path: Armature/spine/chest/head
-        weight: 1
-      - path: Armature/spine/chest/head/head_end
-        weight: 1
-      - path: Armature/spine/leg_upper_L
-        weight: 1
-      - path: Armature/spine/leg_upper_L/leg_lower_L
-        weight: 1
-      - path: Armature/spine/leg_upper_L/leg_lower_L/leg_lower_L_end
-        weight: 1
-      - path: Armature/spine/leg_upper_R
-        weight: 1
-      - path: Armature/spine/leg_upper_R/leg_lower_R
-        weight: 1
-      - path: Armature/spine/leg_upper_R/leg_lower_R/leg_lower_R_end
-        weight: 1
-      - path: Camera
-        weight: 1
-      - path: Cube
-        weight: 1
-      - path: Lamp
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
-    - serializedVersion: 16
-      name: Cube|WalkBackwards
-      takeName: Cube|WalkBackwards
-      firstFrame: 0
-      lastFrame: 59
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

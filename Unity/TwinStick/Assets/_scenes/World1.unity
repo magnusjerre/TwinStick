@@ -128,19 +128,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: 5f1c620f64e084be0af10ef51fe421f7, type: 3}
       propertyPath: m_LocalRotation.x
-      value: .669130802
+      value: .669130862
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: 5f1c620f64e084be0af10ef51fe421f7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: .228637382
+      value: .228637397
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: 5f1c620f64e084be0af10ef51fe421f7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: .669116557
+      value: .669116616
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: 5f1c620f64e084be0af10ef51fe421f7, type: 3}
       propertyPath: m_LocalRotation.w
-      value: .228630468
+      value: .228630483
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 5f1c620f64e084be0af10ef51fe421f7, type: 3}
       propertyPath: m_Controller
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97d63e04c24d4a13be2771bd7bed4cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 15
 --- !u!65 &1015257139
 BoxCollider:
   m_ObjectHideFlags: 0
