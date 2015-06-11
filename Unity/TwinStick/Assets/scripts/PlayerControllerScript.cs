@@ -2,10 +2,13 @@
 using System.Collections;
 
 public class PlayerControllerScript : MonoBehaviour {
+	
+	public float speed = 15;
+	public float jumpForce = 5000;
+	public GroundedScript groundedScript;
 
 	Animator anim;
 	Rigidbody body;
-	public float speed = 10;
 
 	void Awake() {
 		anim = GetComponent<Animator> ();
@@ -13,6 +16,7 @@ public class PlayerControllerScript : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
+
 		float moveH = Input.GetAxis ("Horizontal");
 		float moveV = Input.GetAxis ("Vertical");
 
@@ -22,21 +26,21 @@ public class PlayerControllerScript : MonoBehaviour {
 		if (aimH == 0.0f && aimV == 0.0f) {	//Not aiming
 			anim.SetBool ("aim", false);
 			if (moveH == 0.0f && moveV == 0.0f) {
-				body.velocity = Vector3.zero;
+				body.velocity = new Vector3(0, body.velocity.y, 0);
 				anim.SetBool ("move", false);
 				anim.SetFloat ("speed", 0);
 			} else {
-				Vector3 direction = new Vector3 (moveH, 0, moveV);
-				
-				body.velocity = direction * speed;
+				Vector3 direction = new Vector3 (moveH, body.velocity.y, moveV);
+
+				body.velocity = yLockedMultiplication(direction, speed);
 				float magnitude = direction.magnitude;
-				transform.LookAt (transform.position + direction);
+				transform.LookAt (transform.position + new Vector3(moveH, 0, moveV));
 				anim.SetBool ("move", true);
 				anim.SetFloat ("speed", magnitude);
 			}
-		} else {	//aiming
-			Vector3 moveDirection = new Vector3 (moveH, 0, moveV);
-			body.velocity = moveDirection * speed * 0.25f;
+		} else if (groundedScript.isGrounded()) {	//aiming
+			Vector3 moveDirection = new Vector3 (moveH, body.velocity.y, moveV);
+			body.velocity = yLockedMultiplication(moveDirection, speed * 0.25f);
 
 			Vector3 lookDirection = new Vector3 (aimH, 0, aimV);
 			transform.LookAt (transform.position + lookDirection);
@@ -54,12 +58,35 @@ public class PlayerControllerScript : MonoBehaviour {
 			}
 
 			anim.SetBool("aim", true);
-			anim.SetBool("move", true);
-			anim.SetFloat("xDirection", x);
-			anim.SetFloat("yDirection", z);
+			if (moveDirection.x != 0.0f || moveDirection.y != 0.0f) {
+				anim.SetBool("move", true);
+			} else {
+				anim.SetBool("move", false);
+			}
+
+			if (moveDirection.x == 0f && moveDirection.z == 0f) {
+				anim.SetFloat("xDirection", 0f);
+				anim.SetFloat("yDirection", 0f);
+			} else {
+				anim.SetFloat("xDirection", x);
+				anim.SetFloat("yDirection", z);
+			}
 
 		}
 
+		if (Input.GetButton("Jump") && groundedScript.isGrounded ()) {
+			body.AddForce(new Vector3(0, jumpForce, 0));
+			anim.SetTrigger("jump");
+		}
+
+
+		anim.SetBool ("inAir", !groundedScript.isGrounded ());
+
+	}
+
+	Vector3 yLockedMultiplication(Vector3 vec3, float multiplier) {
+		return new Vector3(vec3.x * multiplier, vec3.y, vec3.z * multiplier);
 	}
 
 }
+

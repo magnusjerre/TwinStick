@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 5f1c620f64e084be0af10ef51fe421f7
-timeCreated: 1433839077
+guid: 1635277811759401aab5be374c6bcb5b
+timeCreated: 1434028502
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -80,14 +80,19 @@ ModelImporter:
     400070: leg_upper_R
     400072: spine
     4300000: Cube
-    7400000: Armature|Idle
-    7400002: Armature|Running
-    7400004: Armature|Walk
-    7400006: Armature|WalkBackwards
-    7400008: Armature|WalkingForwards
-    7400010: Armature|WalkSidewaysLeft
-    7400012: Armature|WalkSidewaysRight
-    7400014: Cube|WalkBackwards
+    7400000: Armature|Die
+    7400002: Armature|Falling
+    7400004: Armature|Idle
+    7400006: Armature|IdleAim
+    7400008: Armature|Jump
+    7400010: Armature|Landing
+    7400012: Armature|Running
+    7400014: Armature|Walk
+    7400016: Armature|WalkBackwards
+    7400018: Armature|WalkingForwards
+    7400020: Armature|WalkSidewaysLeft
+    7400022: Armature|WalkSidewaysRight
+    7400024: Cube|WalkBackwards
     9500000: //RootNode
     13700000: Cube
   materials:
@@ -107,6 +112,206 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
+      name: Armature|Die
+      takeName: Armature|Die
+      firstFrame: 0
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/arm_IK_L
+        weight: 1
+      - path: Armature/arm_IK_L/arm_IK_L_end
+        weight: 1
+      - path: Armature/arm_IK_R
+        weight: 1
+      - path: Armature/arm_IK_R/arm_IK_R_end
+        weight: 1
+      - path: Armature/elbow_target_L
+        weight: 1
+      - path: Armature/elbow_target_L/elbow_target_L_end
+        weight: 1
+      - path: Armature/elbow_target_R
+        weight: 1
+      - path: Armature/elbow_target_R/elbow_target_R_end
+        weight: 1
+      - path: Armature/knee_target_L
+        weight: 1
+      - path: Armature/knee_target_L/knee_target_L_end
+        weight: 1
+      - path: Armature/knee_target_R
+        weight: 1
+      - path: Armature/knee_target_R/knee_target_R_end
+        weight: 1
+      - path: Armature/leg_IK_L
+        weight: 1
+      - path: Armature/leg_IK_L/leg_IK_L_end
+        weight: 1
+      - path: Armature/leg_IK_R
+        weight: 1
+      - path: Armature/leg_IK_R/leg_IK_R_end
+        weight: 1
+      - path: Armature/spine
+        weight: 1
+      - path: Armature/spine/chest
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_L
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_L/arm_lower_L
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_L/arm_lower_L/arm_lower_L_end
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_R
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_R/arm_lower_R
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_R/arm_lower_R/arm_lower_R_end
+        weight: 1
+      - path: Armature/spine/chest/head
+        weight: 1
+      - path: Armature/spine/chest/head/head_end
+        weight: 1
+      - path: Armature/spine/leg_upper_L
+        weight: 1
+      - path: Armature/spine/leg_upper_L/leg_lower_L
+        weight: 1
+      - path: Armature/spine/leg_upper_L/leg_lower_L/leg_lower_L_end
+        weight: 1
+      - path: Armature/spine/leg_upper_R
+        weight: 1
+      - path: Armature/spine/leg_upper_R/leg_lower_R
+        weight: 1
+      - path: Armature/spine/leg_upper_R/leg_lower_R/leg_lower_R_end
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Lamp
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|Falling
+      takeName: Armature|Falling
+      firstFrame: 0
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/arm_IK_L
+        weight: 1
+      - path: Armature/arm_IK_L/arm_IK_L_end
+        weight: 1
+      - path: Armature/arm_IK_R
+        weight: 1
+      - path: Armature/arm_IK_R/arm_IK_R_end
+        weight: 1
+      - path: Armature/elbow_target_L
+        weight: 1
+      - path: Armature/elbow_target_L/elbow_target_L_end
+        weight: 1
+      - path: Armature/elbow_target_R
+        weight: 1
+      - path: Armature/elbow_target_R/elbow_target_R_end
+        weight: 1
+      - path: Armature/knee_target_L
+        weight: 1
+      - path: Armature/knee_target_L/knee_target_L_end
+        weight: 1
+      - path: Armature/knee_target_R
+        weight: 1
+      - path: Armature/knee_target_R/knee_target_R_end
+        weight: 1
+      - path: Armature/leg_IK_L
+        weight: 1
+      - path: Armature/leg_IK_L/leg_IK_L_end
+        weight: 1
+      - path: Armature/leg_IK_R
+        weight: 1
+      - path: Armature/leg_IK_R/leg_IK_R_end
+        weight: 1
+      - path: Armature/spine
+        weight: 1
+      - path: Armature/spine/chest
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_L
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_L/arm_lower_L
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_L/arm_lower_L/arm_lower_L_end
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_R
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_R/arm_lower_R
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_R/arm_lower_R/arm_lower_R_end
+        weight: 1
+      - path: Armature/spine/chest/head
+        weight: 1
+      - path: Armature/spine/chest/head/head_end
+        weight: 1
+      - path: Armature/spine/leg_upper_L
+        weight: 1
+      - path: Armature/spine/leg_upper_L/leg_lower_L
+        weight: 1
+      - path: Armature/spine/leg_upper_L/leg_lower_L/leg_lower_L_end
+        weight: 1
+      - path: Armature/spine/leg_upper_R
+        weight: 1
+      - path: Armature/spine/leg_upper_R/leg_lower_R
+        weight: 1
+      - path: Armature/spine/leg_upper_R/leg_lower_R/leg_lower_R_end
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Lamp
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
       name: Armature|Idle
       takeName: Armature|Idle
       firstFrame: 0
@@ -117,6 +322,306 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/arm_IK_L
+        weight: 1
+      - path: Armature/arm_IK_L/arm_IK_L_end
+        weight: 1
+      - path: Armature/arm_IK_R
+        weight: 1
+      - path: Armature/arm_IK_R/arm_IK_R_end
+        weight: 1
+      - path: Armature/elbow_target_L
+        weight: 1
+      - path: Armature/elbow_target_L/elbow_target_L_end
+        weight: 1
+      - path: Armature/elbow_target_R
+        weight: 1
+      - path: Armature/elbow_target_R/elbow_target_R_end
+        weight: 1
+      - path: Armature/knee_target_L
+        weight: 1
+      - path: Armature/knee_target_L/knee_target_L_end
+        weight: 1
+      - path: Armature/knee_target_R
+        weight: 1
+      - path: Armature/knee_target_R/knee_target_R_end
+        weight: 1
+      - path: Armature/leg_IK_L
+        weight: 1
+      - path: Armature/leg_IK_L/leg_IK_L_end
+        weight: 1
+      - path: Armature/leg_IK_R
+        weight: 1
+      - path: Armature/leg_IK_R/leg_IK_R_end
+        weight: 1
+      - path: Armature/spine
+        weight: 1
+      - path: Armature/spine/chest
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_L
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_L/arm_lower_L
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_L/arm_lower_L/arm_lower_L_end
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_R
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_R/arm_lower_R
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_R/arm_lower_R/arm_lower_R_end
+        weight: 1
+      - path: Armature/spine/chest/head
+        weight: 1
+      - path: Armature/spine/chest/head/head_end
+        weight: 1
+      - path: Armature/spine/leg_upper_L
+        weight: 1
+      - path: Armature/spine/leg_upper_L/leg_lower_L
+        weight: 1
+      - path: Armature/spine/leg_upper_L/leg_lower_L/leg_lower_L_end
+        weight: 1
+      - path: Armature/spine/leg_upper_R
+        weight: 1
+      - path: Armature/spine/leg_upper_R/leg_lower_R
+        weight: 1
+      - path: Armature/spine/leg_upper_R/leg_lower_R/leg_lower_R_end
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Lamp
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|IdleAim
+      takeName: Armature|IdleAim
+      firstFrame: 0
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/arm_IK_L
+        weight: 1
+      - path: Armature/arm_IK_L/arm_IK_L_end
+        weight: 1
+      - path: Armature/arm_IK_R
+        weight: 1
+      - path: Armature/arm_IK_R/arm_IK_R_end
+        weight: 1
+      - path: Armature/elbow_target_L
+        weight: 1
+      - path: Armature/elbow_target_L/elbow_target_L_end
+        weight: 1
+      - path: Armature/elbow_target_R
+        weight: 1
+      - path: Armature/elbow_target_R/elbow_target_R_end
+        weight: 1
+      - path: Armature/knee_target_L
+        weight: 1
+      - path: Armature/knee_target_L/knee_target_L_end
+        weight: 1
+      - path: Armature/knee_target_R
+        weight: 1
+      - path: Armature/knee_target_R/knee_target_R_end
+        weight: 1
+      - path: Armature/leg_IK_L
+        weight: 1
+      - path: Armature/leg_IK_L/leg_IK_L_end
+        weight: 1
+      - path: Armature/leg_IK_R
+        weight: 1
+      - path: Armature/leg_IK_R/leg_IK_R_end
+        weight: 1
+      - path: Armature/spine
+        weight: 1
+      - path: Armature/spine/chest
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_L
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_L/arm_lower_L
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_L/arm_lower_L/arm_lower_L_end
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_R
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_R/arm_lower_R
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_R/arm_lower_R/arm_lower_R_end
+        weight: 1
+      - path: Armature/spine/chest/head
+        weight: 1
+      - path: Armature/spine/chest/head/head_end
+        weight: 1
+      - path: Armature/spine/leg_upper_L
+        weight: 1
+      - path: Armature/spine/leg_upper_L/leg_lower_L
+        weight: 1
+      - path: Armature/spine/leg_upper_L/leg_lower_L/leg_lower_L_end
+        weight: 1
+      - path: Armature/spine/leg_upper_R
+        weight: 1
+      - path: Armature/spine/leg_upper_R/leg_lower_R
+        weight: 1
+      - path: Armature/spine/leg_upper_R/leg_lower_R/leg_lower_R_end
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Lamp
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|Jump
+      takeName: Armature|Jump
+      firstFrame: 0
+      lastFrame: 9
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/arm_IK_L
+        weight: 1
+      - path: Armature/arm_IK_L/arm_IK_L_end
+        weight: 1
+      - path: Armature/arm_IK_R
+        weight: 1
+      - path: Armature/arm_IK_R/arm_IK_R_end
+        weight: 1
+      - path: Armature/elbow_target_L
+        weight: 1
+      - path: Armature/elbow_target_L/elbow_target_L_end
+        weight: 1
+      - path: Armature/elbow_target_R
+        weight: 1
+      - path: Armature/elbow_target_R/elbow_target_R_end
+        weight: 1
+      - path: Armature/knee_target_L
+        weight: 1
+      - path: Armature/knee_target_L/knee_target_L_end
+        weight: 1
+      - path: Armature/knee_target_R
+        weight: 1
+      - path: Armature/knee_target_R/knee_target_R_end
+        weight: 1
+      - path: Armature/leg_IK_L
+        weight: 1
+      - path: Armature/leg_IK_L/leg_IK_L_end
+        weight: 1
+      - path: Armature/leg_IK_R
+        weight: 1
+      - path: Armature/leg_IK_R/leg_IK_R_end
+        weight: 1
+      - path: Armature/spine
+        weight: 1
+      - path: Armature/spine/chest
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_L
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_L/arm_lower_L
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_L/arm_lower_L/arm_lower_L_end
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_R
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_R/arm_lower_R
+        weight: 1
+      - path: Armature/spine/chest/arm_upper_R/arm_lower_R/arm_lower_R_end
+        weight: 1
+      - path: Armature/spine/chest/head
+        weight: 1
+      - path: Armature/spine/chest/head/head_end
+        weight: 1
+      - path: Armature/spine/leg_upper_L
+        weight: 1
+      - path: Armature/spine/leg_upper_L/leg_lower_L
+        weight: 1
+      - path: Armature/spine/leg_upper_L/leg_lower_L/leg_lower_L_end
+        weight: 1
+      - path: Armature/spine/leg_upper_R
+        weight: 1
+      - path: Armature/spine/leg_upper_R/leg_lower_R
+        weight: 1
+      - path: Armature/spine/leg_upper_R/leg_lower_R/leg_lower_R_end
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Lamp
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|Landing
+      takeName: Armature|Landing
+      firstFrame: 0
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
