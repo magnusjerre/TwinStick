@@ -6,6 +6,7 @@ public class PlayerControllerScript : MonoBehaviour {
 	public float speed = 15;
 	public float jumpForce = 5000;
 	public GroundedScript groundedScript;
+	public ShootingScript shootingScript;
 
 	Animator anim;
 	Rigidbody body;
@@ -38,7 +39,7 @@ public class PlayerControllerScript : MonoBehaviour {
 				anim.SetBool ("move", true);
 				anim.SetFloat ("speed", magnitude);
 			}
-		} else if (groundedScript.isGrounded()) {	//aiming
+		} else if (groundedScript.isGrounded() && aimH != 0.0f || aimV != 0.0f) {	//aiming
 			Vector3 moveDirection = new Vector3 (moveH, body.velocity.y, moveV);
 			body.velocity = yLockedMultiplication(moveDirection, speed * 0.25f);
 
@@ -72,6 +73,8 @@ public class PlayerControllerScript : MonoBehaviour {
 				anim.SetFloat("yDirection", z);
 			}
 
+			shootingScript.Fire();
+
 		}
 
 		if (Input.GetButton("Jump") && groundedScript.isGrounded ()) {
@@ -81,7 +84,6 @@ public class PlayerControllerScript : MonoBehaviour {
 
 
 		anim.SetBool ("inAir", !groundedScript.isGrounded ());
-
 	}
 
 	Vector3 yLockedMultiplication(Vector3 vec3, float multiplier) {
