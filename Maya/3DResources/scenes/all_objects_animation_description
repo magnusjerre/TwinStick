@@ -1,0 +1,9 @@
+Frame 1: T-Pose
+Frame 2 - 31: Idle cycle
+Frame 32 - 61: Walk cycle
+Frame 62 - 91: Walk backwards cycle
+Frame 92 - 121: Left walk cycle
+Frame 122 - 151: Right walk cycle
+Frame 152 - 166: Run cycle
+Frame 167 - 176: Grenade throw
+Frame 177: Blow pipe handle
