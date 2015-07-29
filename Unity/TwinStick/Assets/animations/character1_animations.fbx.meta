@@ -261,7 +261,797 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: idle
+      takeName: idle
+      firstFrame: 2
+      lastFrame: 31
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: hip
+        weight: 1
+      - path: hip/belly
+        weight: 1
+      - path: hip/belly/chest
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46/joint47
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46/joint47/joint48
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1/L_Thumb2
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1/L_Thumb2/joint45
+        weight: 1
+      - path: hip/belly/chest/neck
+        weight: 1
+      - path: hip/belly/chest/neck/head
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/jaw
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/jaw/joint33
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/L_ear
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/L_ear/joint29
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/R_ear
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/R_ear/joint29 1
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/snout
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/snout/joint31
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1/joint47
+          1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1/joint47
+          1/joint48 1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1/R_Thumb2
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1/R_Thumb2/joint45
+          1
+        weight: 1
+      - path: hip/L_legUpper
+        weight: 1
+      - path: hip/L_legUpper/L_legLower
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot/L_toe
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot/L_toe/joint5
+        weight: 1
+      - path: hip/R_legUpper
+        weight: 1
+      - path: hip/R_legUpper/R_legLower
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot/R_toe
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot/R_toe/joint5 1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: walk_cycle
+      takeName: walk_cycle
+      firstFrame: 32
+      lastFrame: 61
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: hip
+        weight: 1
+      - path: hip/belly
+        weight: 1
+      - path: hip/belly/chest
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46/joint47
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46/joint47/joint48
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1/L_Thumb2
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1/L_Thumb2/joint45
+        weight: 1
+      - path: hip/belly/chest/neck
+        weight: 1
+      - path: hip/belly/chest/neck/head
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/jaw
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/jaw/joint33
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/L_ear
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/L_ear/joint29
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/R_ear
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/R_ear/joint29 1
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/snout
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/snout/joint31
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1/joint47
+          1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1/joint47
+          1/joint48 1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1/R_Thumb2
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1/R_Thumb2/joint45
+          1
+        weight: 1
+      - path: hip/L_legUpper
+        weight: 1
+      - path: hip/L_legUpper/L_legLower
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot/L_toe
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot/L_toe/joint5
+        weight: 1
+      - path: hip/R_legUpper
+        weight: 1
+      - path: hip/R_legUpper/R_legLower
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot/R_toe
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot/R_toe/joint5 1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: walk_cycle_backwards
+      takeName: walk_cycle_backwards
+      firstFrame: 62
+      lastFrame: 91
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: hip
+        weight: 1
+      - path: hip/belly
+        weight: 1
+      - path: hip/belly/chest
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46/joint47
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46/joint47/joint48
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1/L_Thumb2
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1/L_Thumb2/joint45
+        weight: 1
+      - path: hip/belly/chest/neck
+        weight: 1
+      - path: hip/belly/chest/neck/head
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/jaw
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/jaw/joint33
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/L_ear
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/L_ear/joint29
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/R_ear
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/R_ear/joint29 1
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/snout
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/snout/joint31
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1/joint47
+          1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1/joint47
+          1/joint48 1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1/R_Thumb2
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1/R_Thumb2/joint45
+          1
+        weight: 1
+      - path: hip/L_legUpper
+        weight: 1
+      - path: hip/L_legUpper/L_legLower
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot/L_toe
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot/L_toe/joint5
+        weight: 1
+      - path: hip/R_legUpper
+        weight: 1
+      - path: hip/R_legUpper/R_legLower
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot/R_toe
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot/R_toe/joint5 1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: walk_cycle_left
+      takeName: walk_cycle_left
+      firstFrame: 92
+      lastFrame: 121
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: hip
+        weight: 1
+      - path: hip/belly
+        weight: 1
+      - path: hip/belly/chest
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46/joint47
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46/joint47/joint48
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1/L_Thumb2
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1/L_Thumb2/joint45
+        weight: 1
+      - path: hip/belly/chest/neck
+        weight: 1
+      - path: hip/belly/chest/neck/head
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/jaw
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/jaw/joint33
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/L_ear
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/L_ear/joint29
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/R_ear
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/R_ear/joint29 1
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/snout
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/snout/joint31
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1/joint47
+          1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1/joint47
+          1/joint48 1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1/R_Thumb2
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1/R_Thumb2/joint45
+          1
+        weight: 1
+      - path: hip/L_legUpper
+        weight: 1
+      - path: hip/L_legUpper/L_legLower
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot/L_toe
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot/L_toe/joint5
+        weight: 1
+      - path: hip/R_legUpper
+        weight: 1
+      - path: hip/R_legUpper/R_legLower
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot/R_toe
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot/R_toe/joint5 1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: walk_cycle_right
+      takeName: walk_cycle_right
+      firstFrame: 122
+      lastFrame: 151
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: hip
+        weight: 1
+      - path: hip/belly
+        weight: 1
+      - path: hip/belly/chest
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46/joint47
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46/joint47/joint48
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1/L_Thumb2
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1/L_Thumb2/joint45
+        weight: 1
+      - path: hip/belly/chest/neck
+        weight: 1
+      - path: hip/belly/chest/neck/head
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/jaw
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/jaw/joint33
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/L_ear
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/L_ear/joint29
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/R_ear
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/R_ear/joint29 1
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/snout
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/snout/joint31
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1/joint47
+          1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1/joint47
+          1/joint48 1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1/R_Thumb2
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1/R_Thumb2/joint45
+          1
+        weight: 1
+      - path: hip/L_legUpper
+        weight: 1
+      - path: hip/L_legUpper/L_legLower
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot/L_toe
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot/L_toe/joint5
+        weight: 1
+      - path: hip/R_legUpper
+        weight: 1
+      - path: hip/R_legUpper/R_legLower
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot/R_toe
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot/R_toe/joint5 1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: run_cycle
+      takeName: run_cycle
+      firstFrame: 152
+      lastFrame: 166
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: hip
+        weight: 1
+      - path: hip/belly
+        weight: 1
+      - path: hip/belly/chest
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46/joint47
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46/joint47/joint48
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1/L_Thumb2
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1/L_Thumb2/joint45
+        weight: 1
+      - path: hip/belly/chest/neck
+        weight: 1
+      - path: hip/belly/chest/neck/head
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/jaw
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/jaw/joint33
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/L_ear
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/L_ear/joint29
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/R_ear
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/R_ear/joint29 1
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/snout
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/snout/joint31
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1/joint47
+          1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1/joint47
+          1/joint48 1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1/R_Thumb2
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1/R_Thumb2/joint45
+          1
+        weight: 1
+      - path: hip/L_legUpper
+        weight: 1
+      - path: hip/L_legUpper/L_legLower
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot/L_toe
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot/L_toe/joint5
+        weight: 1
+      - path: hip/R_legUpper
+        weight: 1
+      - path: hip/R_legUpper/R_legLower
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot/R_toe
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot/R_toe/joint5 1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: grenade_throw
+      takeName: grenade_throw
+      firstFrame: 167
+      lastFrame: 176
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000000000000010000000000000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 1
+      maskSource: {fileID: 101100000, guid: 2b8eb35a191906547839a72fef714793, type: 2}
+    - serializedVersion: 16
+      name: blow_pipe_aim
+      takeName: blow_pipe_aim
+      firstFrame: 177
+      lastFrame: 178
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 00000000010000000100000000000000000000000100000001000000010000000100000000000000000000000000000000000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 1
+      maskSource: {fileID: 101100000, guid: 2c5ac6c84e957104f9b0205c14136b6f, type: 2}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
