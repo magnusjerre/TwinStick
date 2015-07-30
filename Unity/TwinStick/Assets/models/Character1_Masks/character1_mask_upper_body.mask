@@ -7,4 +7,103 @@ AvatarMask:
   m_PrefabInternal: {fileID: 0}
   m_Name: character1_mask_upper_body
   m_Mask: 00000000010000000100000000000000000000000100000001000000010000000100000000000000000000000000000000000000
-  m_Elements: []
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: character1
+    m_Weight: 0
+  - m_Path: hip
+    m_Weight: 0
+  - m_Path: hip/belly
+    m_Weight: 0
+  - m_Path: hip/belly/chest
+    m_Weight: 1
+  - m_Path: hip/belly/chest/L_ArmUp
+    m_Weight: 1
+  - m_Path: hip/belly/chest/L_ArmUp/L_ArmLow
+    m_Weight: 1
+  - m_Path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand
+    m_Weight: 1
+  - m_Path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2
+    m_Weight: 1
+  - m_Path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1
+    m_Weight: 1
+  - m_Path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46
+    m_Weight: 1
+  - m_Path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46/joint47
+    m_Weight: 1
+  - m_Path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46/joint47/joint48
+    m_Weight: 1
+  - m_Path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1
+    m_Weight: 1
+  - m_Path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1/L_Thumb2
+    m_Weight: 1
+  - m_Path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1/L_Thumb2/joint45
+    m_Weight: 1
+  - m_Path: hip/belly/chest/neck
+    m_Weight: 1
+  - m_Path: hip/belly/chest/neck/head
+    m_Weight: 1
+  - m_Path: hip/belly/chest/neck/head/joint27
+    m_Weight: 1
+  - m_Path: hip/belly/chest/neck/head/joint27/jaw
+    m_Weight: 1
+  - m_Path: hip/belly/chest/neck/head/joint27/jaw/joint33
+    m_Weight: 1
+  - m_Path: hip/belly/chest/neck/head/joint27/L_ear
+    m_Weight: 1
+  - m_Path: hip/belly/chest/neck/head/joint27/L_ear/joint29
+    m_Weight: 1
+  - m_Path: hip/belly/chest/neck/head/joint27/R_ear
+    m_Weight: 1
+  - m_Path: hip/belly/chest/neck/head/joint27/R_ear/joint29 1
+    m_Weight: 1
+  - m_Path: hip/belly/chest/neck/head/joint27/snout
+    m_Weight: 1
+  - m_Path: hip/belly/chest/neck/head/joint27/snout/joint31
+    m_Weight: 1
+  - m_Path: hip/belly/chest/R_ArmUp
+    m_Weight: 1
+  - m_Path: hip/belly/chest/R_ArmUp/R_ArmLow
+    m_Weight: 1
+  - m_Path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand
+    m_Weight: 1
+  - m_Path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2
+    m_Weight: 1
+  - m_Path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1
+    m_Weight: 1
+  - m_Path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1
+    m_Weight: 1
+  - m_Path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1/joint47
+      1
+    m_Weight: 1
+  - m_Path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1/joint47
+      1/joint48 1
+    m_Weight: 1
+  - m_Path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1
+    m_Weight: 1
+  - m_Path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1/R_Thumb2
+    m_Weight: 1
+  - m_Path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1/R_Thumb2/joint45
+      1
+    m_Weight: 1
+  - m_Path: hip/L_legUpper
+    m_Weight: 0
+  - m_Path: hip/L_legUpper/L_legLower
+    m_Weight: 0
+  - m_Path: hip/L_legUpper/L_legLower/L_foot
+    m_Weight: 0
+  - m_Path: hip/L_legUpper/L_legLower/L_foot/L_toe
+    m_Weight: 0
+  - m_Path: hip/L_legUpper/L_legLower/L_foot/L_toe/joint5
+    m_Weight: 0
+  - m_Path: hip/R_legUpper
+    m_Weight: 0
+  - m_Path: hip/R_legUpper/R_legLower
+    m_Weight: 0
+  - m_Path: hip/R_legUpper/R_legLower/R_foot
+    m_Weight: 0
+  - m_Path: hip/R_legUpper/R_legLower/R_foot/R_toe
+    m_Weight: 0
+  - m_Path: hip/R_legUpper/R_legLower/R_foot/R_toe/joint5 1
+    m_Weight: 0
