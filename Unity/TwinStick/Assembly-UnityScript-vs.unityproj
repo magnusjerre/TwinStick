@@ -5,11 +5,11 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{4FFD60E1-053F-9CEC-A245-4619A539B082}</ProjectGuid>
+	<ProjectGuid>{BE9C8506-309D-D76E-8A0C-60D7E3289914}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<AssemblyName>Assembly-UnityScript</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
 	<BaseDirectory>Assets</BaseDirectory>
@@ -46,13 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\old\BulletManagerScript.cs" />
-     <Compile Include="Assets\old\BulletScript.cs" />
-     <Compile Include="Assets\old\GunScript.cs" />
-     <Compile Include="Assets\old\scripts\GroundedScript.cs" />
-     <Compile Include="Assets\old\scripts\PlayerControllerScript.cs" />
-     <Compile Include="Assets\old\scripts\ShootingScript.cs" />
-     <Compile Include="Assets\scripts\PlayerController.cs" />
+     <Compile Include="Assets\scripts\player_controller.js" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
