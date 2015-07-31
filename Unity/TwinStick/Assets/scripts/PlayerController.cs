@@ -11,12 +11,14 @@ public class PlayerController : MonoBehaviour {
 	private Rigidbody body;
 
 	private int attackLayerIndex;
+	private BlowPipe bpScript;
 
 	void Awake() {
 		anim = GetComponent<Animator> ();
 		body = GetComponent<Rigidbody> ();
 
 		attackLayerIndex = anim.GetLayerIndex ("Attack Layer");
+		bpScript = GetComponentInChildren<BlowPipe> ();
 	}
 
 	void FixedUpdate() {
@@ -32,6 +34,12 @@ public class PlayerController : MonoBehaviour {
 			speedMultiplier = speedDuringAim;
 			anim.SetLayerWeight(attackLayerIndex, 1f);
 			transform.LookAt(transform.position + aim);
+			blowpipeHandle.LookAt(blowpipeHandle.position + transform.forward);
+
+			if (Input.GetAxis("FireRT") > 0.2f) {
+				Debug.Log("Fire!!!!!");
+				bpScript.Fire();
+			}
 		} else {
 			//Not aiming anywhere...
 			isAiming = false;
