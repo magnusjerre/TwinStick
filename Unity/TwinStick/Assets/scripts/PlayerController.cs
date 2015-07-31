@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour {
 
 	public float speed = 5f;
 	public float speedDuringAim = 2f;
+	public Transform blowpipeHandle;
 
 	private Animator anim;
 	private Rigidbody body;
@@ -16,16 +17,6 @@ public class PlayerController : MonoBehaviour {
 		body = GetComponent<Rigidbody> ();
 
 		attackLayerIndex = anim.GetLayerIndex ("Attack Layer");
-	}
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
 	}
 
 	void FixedUpdate() {
@@ -50,14 +41,17 @@ public class PlayerController : MonoBehaviour {
 		//Movement handling
 		if (isOutsideDeadZone(move.x) || isOutsideDeadZone(move.z)) {
 			anim.SetBool("isMoving", true);
-			Vector3 relMovement = calcRelativeMoveDirection(move, aim);
-			anim.SetFloat("xDir", relMovement.x);
-			anim.SetFloat("yDir", relMovement.z);
-			body.velocity = new Vector3(move.x * speedMultiplier, 0f, move.z * speedMultiplier);
-
 			if (!isAiming) {
 				transform.LookAt(transform.position + move);
+				anim.SetFloat("xDir", 0f);
+				anim.SetFloat("yDir", move.sqrMagnitude);
+			} else {
+				Vector3 relMovement = calcRelativeMoveDirection(move, aim);
+				anim.SetFloat("xDir", relMovement.x);
+				anim.SetFloat("yDir", relMovement.z);
 			}
+			body.velocity = new Vector3(move.x * speedMultiplier, 0f, move.z * speedMultiplier);
+
 		} else {
 			anim.SetBool("isMoving", false);
 			anim.SetFloat("xDir", 0f);
