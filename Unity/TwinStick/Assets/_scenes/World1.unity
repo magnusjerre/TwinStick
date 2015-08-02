@@ -156,8 +156,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38d2fe485b33ee54781d96a79ed3d8b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxAimDistance: 10
   fireRate: 4
   muzzle: {fileID: 376492616}
+  renderAim: 0
 --- !u!114 &50428303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -553,7 +555,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 376492616}
-  m_Layer: 0
+  - 120: {fileID: 376492617}
+  m_Layer: 2
   m_Name: Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -572,6 +575,43 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1887887005}
   m_RootOrder: 0
+--- !u!120 &376492617
+LineRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 376492615}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 8d7448eeccdb4f341a0d0f4b22ca862a, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 376492616}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 1}
+  m_Parameters:
+    startWidth: .0500000007
+    endWidth: .00999999978
+    m_StartColor:
+      serializedVersion: 2
+      rgba: 4278190335
+    m_EndColor:
+      serializedVersion: 2
+      rgba: 1824176895
+  m_UseWorldSpace: 0
 --- !u!4 &469502112 stripped
 Transform:
   m_PrefabParentObject: {fileID: 461700, guid: fb82834bec5081048882149335909df3, type: 2}
@@ -1538,7 +1578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   speedDuringAim: 2
-  blowpipeHandle: {fileID: 0}
+  blowpipeHandle: {fileID: 1686211699}
 --- !u!54 &1639545001
 Rigidbody:
   m_ObjectHideFlags: 0

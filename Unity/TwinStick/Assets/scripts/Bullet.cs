@@ -36,10 +36,10 @@ public class Bullet : MonoBehaviour {
 		body.velocity = body.transform.forward * speed;
 	}
 
-	public void OnCollisionEnter(Collision collision) {
-		Debug.Log ("BAM! Collision!");
+	public void OnTriggerEnter(Collider collider) {
+		Debug.Log ("BAM! Collided!");
 
-		Damageable damageable = collision.gameObject.GetComponent<Damageable> ();
+		Damageable damageable = collider.gameObject.GetComponent<Damageable> ();
 		if (damageable != null) {
 			damageable.DoDamage(damage);
 		}

@@ -31,18 +31,19 @@ public class PlayerController : MonoBehaviour {
 		if (isOutsideDeadZone (aim.x) || isOutsideDeadZone (aim.z)) {
 			//Aiming something somewhere
 			isAiming = true;
+			bpScript.renderAim = true;
 			speedMultiplier = speedDuringAim;
 			anim.SetLayerWeight(attackLayerIndex, 1f);
 			transform.LookAt(transform.position + aim);
 			blowpipeHandle.LookAt(blowpipeHandle.position + transform.forward);
 
 			if (Input.GetAxis("FireRT") > 0.2f) {
-				Debug.Log("Fire!!!!!");
 				bpScript.Fire();
 			}
 		} else {
 			//Not aiming anywhere...
 			isAiming = false;
+			bpScript.renderAim = false;
 			anim.SetLayerWeight(attackLayerIndex, 0f);
 		}
 		//The following should be moved inside the above else-statement
