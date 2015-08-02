@@ -57,6 +57,7 @@
      <Compile Include="Assets\scripts\BulletManager.cs" />
      <Compile Include="Assets\scripts\CameraFollow.cs" />
      <Compile Include="Assets\scripts\Damageable.cs" />
+     <Compile Include="Assets\scripts\Leaf.cs" />
      <Compile Include="Assets\scripts\PlayerController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
