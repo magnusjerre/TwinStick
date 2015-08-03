@@ -12,11 +12,16 @@ public class Enemy : Owner {
 	float elapsedWaitTime = 0f;
 	bool isWaiting = false;
 	int currentNavTarget = 0;
+	bool playerInSight = false;
+	float minPlayerFollowDt = 0.2f;
+	float playerFollowLeft = -1f;
+	GameObject target;
 
 	void Awake() {
 		transform.position = navPoints [0].position;
 		anim = GetComponent<Animator> ();
 		agent = GetComponent<NavMeshAgent> ();
+		target = GameObject.FindGameObjectWithTag ("Player");
 		isWaiting = true;
 	}
 
@@ -27,7 +32,14 @@ public class Enemy : Owner {
 	// Update is called once per frame
 	void Update () {
 
-		if (isWaiting) {
+		if (playerInSight) {
+			playerFollowLeft -= Time.deltaTime;
+			if (playerFollowLeft < 0) {
+				playerFollowLeft = minPlayerFollowDt;
+				agent.destination = target.transform.position;
+			}
+		}
+		if (!playerInSight && isWaiting) {
 			elapsedWaitTime += Time.deltaTime;
 			anim.SetBool ("isMoving", false);
 			anim.SetFloat("yDir", 0.75f);
@@ -69,10 +81,13 @@ public class Enemy : Owner {
 	public override void NotifyTargetAcquired (GameObject target)
 	{
 		Debug.Log ("Target acquired!");
+		playerInSight = true;
+
 	}
 	public override void NotifyTargetLost (GameObject target)
 	{
 		Debug.Log ("Target lost...");
+		playerInSight = false;
 	}
 	#endregion
 }
