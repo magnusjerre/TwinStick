@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Enemy : Owner {
+public class Enemy : Owner, Damageable {
 
 	public Transform[] navPoints;
 	public float waitTime = 2f;
+	public float health = 100f;
 	
 	Animator anim;
 	NavMeshAgent agent;
@@ -89,5 +90,19 @@ public class Enemy : Owner {
 		Debug.Log ("Target lost...");
 		playerInSight = false;
 	}
+	#endregion
+
+	#region Damageable implementation
+
+	public void DoDamage (float damage)
+	{
+		health -= damage;
+
+		if (health < 1) {
+			Debug.Log ("enemy down");
+			gameObject.SetActive(false);
+		}
+	}
+
 	#endregion
 }
