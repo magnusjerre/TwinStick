@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Enemy : MonoBehaviour {
+public class Enemy : Owner {
 
 	public Transform[] navPoints;
 	public float waitTime = 2f;
@@ -45,7 +45,6 @@ public class Enemy : MonoBehaviour {
 		}
 
 		if (hasReachedTarget()) {
-			Debug.Log("hello?");
 			isWaiting = true;
 		}
 
@@ -64,4 +63,16 @@ public class Enemy : MonoBehaviour {
 
 		return true;
 	}
+
+
+	#region implemented abstract members of Owner
+	public override void NotifyTargetAcquired (GameObject target)
+	{
+		Debug.Log ("Target acquired!");
+	}
+	public override void NotifyTargetLost (GameObject target)
+	{
+		Debug.Log ("Target lost...");
+	}
+	#endregion
 }
