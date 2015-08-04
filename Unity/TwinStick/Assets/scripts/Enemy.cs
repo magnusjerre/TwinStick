@@ -6,6 +6,7 @@ public class Enemy : Owner, Damageable {
 	public Transform[] navPoints;
 	public float waitTime = 2f;
 	public float health = 100f;
+	public ParticleSystem particleSystemPrefab;
 	
 	Animator anim;
 	NavMeshAgent agent;
@@ -17,13 +18,20 @@ public class Enemy : Owner, Damageable {
 	float minPlayerFollowDt = 0.2f;
 	float playerFollowLeft = -1f;
 	GameObject target;
+	CapsuleCollider cCollider;
+	ParticleSystem particles;
 
 	void Awake() {
 		transform.position = navPoints [0].position;
 		anim = GetComponent<Animator> ();
 		agent = GetComponent<NavMeshAgent> ();
 		target = GameObject.FindGameObjectWithTag ("Player");
+		cCollider = GetComponent<CapsuleCollider> ();
 		isWaiting = true;
+		particles = (ParticleSystem)Instantiate (particleSystemPrefab);
+		Debug.Log ("ps: " + particleSystemPrefab);
+
+
 	}
 
 	// Use this for initialization
@@ -94,14 +102,19 @@ public class Enemy : Owner, Damageable {
 
 	#region Damageable implementation
 
-	public void DoDamage (float damage)
+	public void DoDamage (float damage, Vector3 point, Vector3 normal)
 	{
 		health -= damage;
+
+		particles.transform.position = point;
+		particles.transform.LookAt (point + normal);
+		particles.Play ();
 
 		if (health < 1) {
 			Debug.Log ("enemy down");
 			gameObject.SetActive(false);
 		}
+
 	}
 
 	#endregion

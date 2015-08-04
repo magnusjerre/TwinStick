@@ -41,7 +41,10 @@ public class Bullet : MonoBehaviour {
 
 		Damageable damageable = collider.gameObject.GetComponent<Damageable> ();
 		if (damageable != null) {
-			damageable.DoDamage(damage);
+			Ray ray = new Ray(transform.position, transform.forward);
+			RaycastHit hit;
+			Physics.Raycast (ray, out hit, 1f);
+			damageable.DoDamage(damage, transform.position, transform.forward * -1);
 		}
 
 		gameObject.SetActive (false);
