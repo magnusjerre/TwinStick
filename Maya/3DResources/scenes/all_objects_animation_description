@@ -6,4 +6,5 @@ Frame 92 - 121: Left walk cycle
 Frame 122 - 151: Right walk cycle
 Frame 152 - 166: Run cycle
 Frame 167 - 176: Grenade throw
-Frame 177: Blow pipe handle
+Frame 177 - 178: Blow pipe handle
+Frame 179 - 208: Death
