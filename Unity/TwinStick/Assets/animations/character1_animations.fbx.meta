@@ -1,237 +1,104 @@
 fileFormatVersion: 2
 guid: 0b205caebd8645f4f89fcae4374d8f5f
-timeCreated: 1438110193
+timeCreated: 1438689716
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: belly
-    100002: belly_CTRL
-    100004: blowdart
-    100006: blowpipe1
-    100008: character1
-    100010: //RootNode
-    100012: character_CTRL
-    100014: chest
-    100016: chest_CTRL
-    100018: group
-    100020: head
-    100022: head_CTRL
-    100024: hip
-    100026: imagePlane1
-    100028: imagePlane2
-    100030: jaw
-    100032: jaw_CTRL
-    100034: joint27
-    100036: joint29
-    100038: joint29 1
-    100040: joint31
-    100042: joint33
-    100044: joint45
-    100046: joint45 1
-    100048: joint46
-    100050: joint46 1
-    100052: joint47
-    100054: joint47 1
-    100056: joint48
-    100058: joint48 1
-    100060: joint5
-    100062: joint5 1
-    100064: L_arm_CTRL
-    100066: L_Arm_IK
-    100068: L_ArmLow
-    100070: L_ArmUp
-    100072: L_ear
-    100074: L_ear_CTRL
-    100076: L_Finger1
-    100078: L_Finger1_CTRL
-    100080: L_Finger2_CTRL
-    100082: L_Finger3_CTRL
-    100084: L_foot
-    100086: L_Hand
-    100088: L_Hand2
-    100090: L_leg_CTRL
-    100092: L_leg_IK
-    100094: L_legLower
-    100096: L_legUpper
-    100098: L_Thumb1
-    100100: L_Thumb1_CTRL
-    100102: L_Thumb2
-    100104: L_Thumb2_CTRL
-    100106: L_toe
-    100108: L_toe_CTRL
-    100110: leaf
-    100112: leaf1
-    100114: neck
-    100116: neck_CTRL
-    100118: pasted__leaf1
-    100120: pasted__leaf2
-    100122: pasted__leaf3
-    100124: pasted__leaf4
-    100126: pPyramid1
-    100128: pPyramid2
-    100130: pPyramid3
-    100132: pPyramid4
-    100134: R_arm_CTRL
-    100136: R_ArmIK
-    100138: R_ArmLow
-    100140: R_ArmUp
-    100142: R_ear
-    100144: R_ear_CTRL
-    100146: R_Finger1
-    100148: R_FInger1_CTRL
-    100150: R_Finger2_CTRL
-    100152: R_FInger3_CTRL
-    100154: R_foot
-    100156: R_Hand
-    100158: R_Hand2
-    100160: R_leg_CTRL
-    100162: R_leg_IK
-    100164: R_legLower
-    100166: R_legUpper
-    100168: R_Thumb1
-    100170: R_Thumb1_CTRL
-    100172: R_Thumb2
-    100174: R_Thumb2_CTRL
-    100176: R_toe
-    100178: R_toe_CTRL
-    100180: rock
-    100182: snout
-    100184: snout_CTRL
-    100186: transform1
-    100188: transform2
-    100190: transform3
-    100192: transform4
-    100194: treeStem
+    100002: //RootNode
+    100004: chest
+    100006: head
+    100008: hip
+    100010: jaw
+    100012: joint27
+    100014: joint29
+    100016: joint29 1
+    100018: joint31
+    100020: joint33
+    100022: joint45
+    100024: joint45 1
+    100026: joint46
+    100028: joint46 1
+    100030: joint47
+    100032: joint47 1
+    100034: joint48
+    100036: joint48 1
+    100038: joint5
+    100040: joint5 1
+    100042: L_ArmLow
+    100044: L_ArmUp
+    100046: L_ear
+    100048: L_Finger1
+    100050: L_foot
+    100052: L_Hand
+    100054: L_Hand2
+    100056: L_legLower
+    100058: L_legUpper
+    100060: L_Thumb1
+    100062: L_Thumb2
+    100064: L_toe
+    100066: neck
+    100068: R_ArmLow
+    100070: R_ArmUp
+    100072: R_ear
+    100074: R_Finger1
+    100076: R_foot
+    100078: R_Hand
+    100080: R_Hand2
+    100082: R_legLower
+    100084: R_legUpper
+    100086: R_Thumb1
+    100088: R_Thumb2
+    100090: R_toe
+    100092: snout
     400000: belly
-    400002: belly_CTRL
-    400004: blowdart
-    400006: blowpipe1
-    400008: character1
-    400010: //RootNode
-    400012: character_CTRL
-    400014: chest
-    400016: chest_CTRL
-    400018: group
-    400020: head
-    400022: head_CTRL
-    400024: hip
-    400026: imagePlane1
-    400028: imagePlane2
-    400030: jaw
-    400032: jaw_CTRL
-    400034: joint27
-    400036: joint29
-    400038: joint29 1
-    400040: joint31
-    400042: joint33
-    400044: joint45
-    400046: joint45 1
-    400048: joint46
-    400050: joint46 1
-    400052: joint47
-    400054: joint47 1
-    400056: joint48
-    400058: joint48 1
-    400060: joint5
-    400062: joint5 1
-    400064: L_arm_CTRL
-    400066: L_Arm_IK
-    400068: L_ArmLow
-    400070: L_ArmUp
-    400072: L_ear
-    400074: L_ear_CTRL
-    400076: L_Finger1
-    400078: L_Finger1_CTRL
-    400080: L_Finger2_CTRL
-    400082: L_Finger3_CTRL
-    400084: L_foot
-    400086: L_Hand
-    400088: L_Hand2
-    400090: L_leg_CTRL
-    400092: L_leg_IK
-    400094: L_legLower
-    400096: L_legUpper
-    400098: L_Thumb1
-    400100: L_Thumb1_CTRL
-    400102: L_Thumb2
-    400104: L_Thumb2_CTRL
-    400106: L_toe
-    400108: L_toe_CTRL
-    400110: leaf
-    400112: leaf1
-    400114: neck
-    400116: neck_CTRL
-    400118: pasted__leaf1
-    400120: pasted__leaf2
-    400122: pasted__leaf3
-    400124: pasted__leaf4
-    400126: pPyramid1
-    400128: pPyramid2
-    400130: pPyramid3
-    400132: pPyramid4
-    400134: R_arm_CTRL
-    400136: R_ArmIK
-    400138: R_ArmLow
-    400140: R_ArmUp
-    400142: R_ear
-    400144: R_ear_CTRL
-    400146: R_Finger1
-    400148: R_FInger1_CTRL
-    400150: R_Finger2_CTRL
-    400152: R_FInger3_CTRL
-    400154: R_foot
-    400156: R_Hand
-    400158: R_Hand2
-    400160: R_leg_CTRL
-    400162: R_leg_IK
-    400164: R_legLower
-    400166: R_legUpper
-    400168: R_Thumb1
-    400170: R_Thumb1_CTRL
-    400172: R_Thumb2
-    400174: R_Thumb2_CTRL
-    400176: R_toe
-    400178: R_toe_CTRL
-    400180: rock
-    400182: snout
-    400184: snout_CTRL
-    400186: transform1
-    400188: transform2
-    400190: transform3
-    400192: transform4
-    400194: treeStem
-    2300000: blowdart
-    2300002: blowpipe1
-    2300004: leaf
-    2300006: leaf1
-    2300008: pPyramid1
-    2300010: pPyramid2
-    2300012: pPyramid3
-    2300014: pPyramid4
-    2300016: rock
-    2300018: treeStem
-    3300000: blowdart
-    3300002: blowpipe1
-    3300004: leaf
-    3300006: leaf1
-    3300008: pPyramid1
-    3300010: pPyramid2
-    3300012: pPyramid3
-    3300014: pPyramid4
-    3300016: rock
-    3300018: treeStem
-    4300000: character1
-    4300002: blowpipe1
-    4300004: blowdart
-    4300006: leaf
-    4300008: rock
-    4300010: leaf1
-    4300012: treeStem
-    4300014: pPyramid4
-    4300016: pPyramid3
-    4300018: pPyramid2
-    4300020: pPyramid1
+    400002: //RootNode
+    400004: chest
+    400006: head
+    400008: hip
+    400010: jaw
+    400012: joint27
+    400014: joint29
+    400016: joint29 1
+    400018: joint31
+    400020: joint33
+    400022: joint45
+    400024: joint45 1
+    400026: joint46
+    400028: joint46 1
+    400030: joint47
+    400032: joint47 1
+    400034: joint48
+    400036: joint48 1
+    400038: joint5
+    400040: joint5 1
+    400042: L_ArmLow
+    400044: L_ArmUp
+    400046: L_ear
+    400048: L_Finger1
+    400050: L_foot
+    400052: L_Hand
+    400054: L_Hand2
+    400056: L_legLower
+    400058: L_legUpper
+    400060: L_Thumb1
+    400062: L_Thumb2
+    400064: L_toe
+    400066: neck
+    400068: R_ArmLow
+    400070: R_ArmUp
+    400072: R_ear
+    400074: R_Finger1
+    400076: R_foot
+    400078: R_Hand
+    400080: R_Hand2
+    400082: R_legLower
+    400084: R_legUpper
+    400086: R_Thumb1
+    400088: R_Thumb2
+    400090: R_toe
+    400092: snout
     7400000: idle
     7400002: walk_cycle
     7400004: walk_cycle_backwards
@@ -239,9 +106,9 @@ ModelImporter:
     7400008: walk_cycle_right
     7400010: run_cycle
     7400012: grenade_throw
-    7400014: blow_pipe_aim
+    7400014: blow_pip_aim
+    7400016: death
     9500000: //RootNode
-    13700000: character1
   materials:
     importMaterials: 1
     materialName: 0
@@ -255,7 +122,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
@@ -1020,15 +887,112 @@ ModelImporter:
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000000000000010000000000000001000000010000000100000001000000
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask: []
-      maskType: 1
-      maskSource: {fileID: 101100000, guid: 2b8eb35a191906547839a72fef714793, type: 2}
+      transformMask:
+      - path: 
+        weight: 1
+      - path: hip
+        weight: 1
+      - path: hip/belly
+        weight: 1
+      - path: hip/belly/chest
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46/joint47
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46/joint47/joint48
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1/L_Thumb2
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1/L_Thumb2/joint45
+        weight: 1
+      - path: hip/belly/chest/neck
+        weight: 1
+      - path: hip/belly/chest/neck/head
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/jaw
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/jaw/joint33
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/L_ear
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/L_ear/joint29
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/R_ear
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/R_ear/joint29 1
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/snout
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/snout/joint31
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1/joint47
+          1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1/joint47
+          1/joint48 1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1/R_Thumb2
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1/R_Thumb2/joint45
+          1
+        weight: 1
+      - path: hip/L_legUpper
+        weight: 1
+      - path: hip/L_legUpper/L_legLower
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot/L_toe
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot/L_toe/joint5
+        weight: 1
+      - path: hip/R_legUpper
+        weight: 1
+      - path: hip/R_legUpper/R_legLower
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot/R_toe
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot/R_toe/joint5 1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: blow_pipe_aim
-      takeName: blow_pipe_aim
+      name: blow_pip_aim
+      takeName: blow_pip_aim
       firstFrame: 177
       lastFrame: 178
       wrapMode: 0
@@ -1046,12 +1010,232 @@ ModelImporter:
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
-      bodyMask: 00000000010000000100000000000000000000000100000001000000010000000100000000000000000000000000000000000000
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask: []
-      maskType: 1
-      maskSource: {fileID: 101100000, guid: 2c5ac6c84e957104f9b0205c14136b6f, type: 2}
+      transformMask:
+      - path: 
+        weight: 1
+      - path: hip
+        weight: 1
+      - path: hip/belly
+        weight: 1
+      - path: hip/belly/chest
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46/joint47
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46/joint47/joint48
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1/L_Thumb2
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1/L_Thumb2/joint45
+        weight: 1
+      - path: hip/belly/chest/neck
+        weight: 1
+      - path: hip/belly/chest/neck/head
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/jaw
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/jaw/joint33
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/L_ear
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/L_ear/joint29
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/R_ear
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/R_ear/joint29 1
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/snout
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/snout/joint31
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1/joint47
+          1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1/joint47
+          1/joint48 1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1/R_Thumb2
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1/R_Thumb2/joint45
+          1
+        weight: 1
+      - path: hip/L_legUpper
+        weight: 1
+      - path: hip/L_legUpper/L_legLower
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot/L_toe
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot/L_toe/joint5
+        weight: 1
+      - path: hip/R_legUpper
+        weight: 1
+      - path: hip/R_legUpper/R_legLower
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot/R_toe
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot/R_toe/joint5 1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: death
+      takeName: death
+      firstFrame: 179
+      lastFrame: 208
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: hip
+        weight: 1
+      - path: hip/belly
+        weight: 1
+      - path: hip/belly/chest
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46/joint47
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46/joint47/joint48
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1/L_Thumb2
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1/L_Thumb2/joint45
+        weight: 1
+      - path: hip/belly/chest/neck
+        weight: 1
+      - path: hip/belly/chest/neck/head
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/jaw
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/jaw/joint33
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/L_ear
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/L_ear/joint29
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/R_ear
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/R_ear/joint29 1
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/snout
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/snout/joint31
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1/joint47
+          1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1/joint47
+          1/joint48 1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1/R_Thumb2
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1/R_Thumb2/joint45
+          1
+        weight: 1
+      - path: hip/L_legUpper
+        weight: 1
+      - path: hip/L_legUpper/L_legLower
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot/L_toe
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot/L_toe/joint5
+        weight: 1
+      - path: hip/R_legUpper
+        weight: 1
+      - path: hip/R_legUpper/R_legLower
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot/R_toe
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot/R_toe/joint5 1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []

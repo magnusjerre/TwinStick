@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Enemy : Owner, Damageable {
@@ -14,9 +14,11 @@ public class Enemy : Owner, Damageable {
 	float elapsedWaitTime = 0f;
 	bool isWaiting = false;
 	int currentNavTarget = 0;
+
 	bool playerInSight = false;
 	float minPlayerFollowDt = 0.2f;
 	float playerFollowLeft = -1f;
+
 	GameObject target;
 	CapsuleCollider cCollider;
 	ParticleSystem particles;
@@ -40,6 +42,8 @@ public class Enemy : Owner, Damageable {
 	
 	// Update is called once per frame
 	void Update () {
+		if (health < 1) 
+			return;
 
 		if (playerInSight) {
 			playerFollowLeft -= Time.deltaTime;
@@ -112,10 +116,16 @@ public class Enemy : Owner, Damageable {
 
 		if (health < 1) {
 			Debug.Log ("enemy down");
-			gameObject.SetActive(false);
+			anim.SetTrigger("death");
+			DisableBoxes();
 		}
 
 	}
 
 	#endregion
+
+	void DisableBoxes() {
+		cCollider.enabled = false;
+		agent.enabled = false;
+	}
 }
