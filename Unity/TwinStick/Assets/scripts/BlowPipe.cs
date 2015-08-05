@@ -41,14 +41,14 @@ public class BlowPipe : MonoBehaviour {
 	}
 
 	public void RenderLine() {
-		Ray ray = new Ray (muzzle.position, transform.forward);
+		Ray ray = new Ray (muzzle.position, muzzle.forward);
 		RaycastHit rHit;
 		int layerMask = 1 << 8 | 1 << 9;
 		layerMask = ~layerMask;
 		if (Physics.Raycast (ray, out rHit, 10f, layerMask)) {
-			mLineRenderer.SetPosition (1, transform.InverseTransformPoint (muzzle.position + (transform.forward * rHit.distance)));
+			mLineRenderer.SetPosition (1, transform.InverseTransformPoint (muzzle.position + (muzzle.forward * rHit.distance)));
 		} else {
-			mLineRenderer.SetPosition(1, transform.InverseTransformPoint(muzzle.position + transform.forward * maxAimDistance));
+			mLineRenderer.SetPosition(1, transform.InverseTransformPoint(muzzle.position + muzzle.forward * maxAimDistance));
 		}
 	}
 
