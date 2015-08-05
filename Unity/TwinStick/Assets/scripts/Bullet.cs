@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Bullet : MonoBehaviour {
 
-	public float speed = 300f;
+	public float speed = 20f;
 	public float damage = 50f;
 	public float timeToLive = 3f;
 
@@ -33,7 +33,7 @@ public class Bullet : MonoBehaviour {
 	}
 
 	public void Fire() {
-		body.AddForce(transform.forward * speed);
+		body.velocity = body.transform.forward * speed;
 	}
 
 	public void OnTriggerEnter(Collider collider) {

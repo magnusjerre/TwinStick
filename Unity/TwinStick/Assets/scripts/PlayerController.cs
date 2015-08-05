@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour {
 
 		float speedMultiplier = speed;
 		bool isAiming = false;
-		//Aim handling/
+		//Aim handling
 		if (isOutsideDeadZone (aim.x) || isOutsideDeadZone (aim.z)) {
 			//Aiming something somewhere
 			isAiming = true;
