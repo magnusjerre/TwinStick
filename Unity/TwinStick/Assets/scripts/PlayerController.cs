@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
@@ -11,14 +11,16 @@ public class PlayerController : MonoBehaviour {
 	private Rigidbody body;
 
 	private int attackLayerIndex;
-	private BlowPipe bpScript;
+
+	private BlowPipe bp;
 	private FiringMechanism fm;
 	void Awake() {
 		anim = GetComponent<Animator> ();
 		body = GetComponent<Rigidbody> ();
 		fm = GetComponentInChildren<FiringMechanism> ();
 		attackLayerIndex = anim.GetLayerIndex ("Attack Layer");
-		bpScript = GetComponentInChildren<BlowPipe> ();
+
+		bp = GetComponentInChildren<BlowPipe> ();
 	}
 
 	void FixedUpdate() {
@@ -31,6 +33,7 @@ public class PlayerController : MonoBehaviour {
 		if (isOutsideDeadZone (aim.x) || isOutsideDeadZone (aim.z)) {
 			//Aiming something somewhere
 			isAiming = true;
+			bp.IsAiming(true);
 			//bpScript.renderAim = true;
 			//bpScript.IsAiming(true);
 			speedMultiplier = speedDuringAim;
@@ -40,12 +43,14 @@ public class PlayerController : MonoBehaviour {
 
 			if (Input.GetAxis("FireRT") > 0.2f) {
 				//bpScript.Fire();
-				fm.Fire();
+				//fm.Fire();
+				bp.Fire();
 
 			}
 		} else {
 			//Not aiming anywhere...
 			isAiming = false;
+			bp.IsAiming(false);
 			//bpScript.IsAiming(false);
 			//bpScript.renderAim = false;
 			anim.SetLayerWeight(attackLayerIndex, 0f);

@@ -10,8 +10,7 @@ public class FiringMechanism : MonoBehaviour {
 	private float minTimeBetweenFire;
 	private float timeLeftToFire = 0f;
 	
-	void Awake() {
-		//pManager = GetComponent<ProjectileManager> ();
+	public virtual void Awake() {
 		minTimeBetweenFire = 1f / fireRate;
 		magazine.Setup ();
 	}
@@ -21,7 +20,7 @@ public class FiringMechanism : MonoBehaviour {
 		timeLeftToFire -= Time.deltaTime;
 	}
 	
-	public void Fire() {
+	public virtual void Fire() {
 		
 		if (timeLeftToFire < 0f) {
 			magazine.FireProjectile(muzzle);

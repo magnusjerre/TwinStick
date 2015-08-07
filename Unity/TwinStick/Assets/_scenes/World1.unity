@@ -165,13 +165,33 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 3a707db529735c7469ca279af83e569a, type: 3}
   m_PrefabInternal: {fileID: 1013481403}
---- !u!114 &50428303
+--- !u!114 &50428302
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 50428301}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38d2fe485b33ee54781d96a79ed3d8b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireRate: 4
+  muzzle: {fileID: 376492616}
+  magazine:
+    size: -1
+    maxCarriable: 10
+    pool:
+      size: 20
+      prefab: {fileID: 131980, guid: 37dff54f9a20d0d4da4a87bb036fc210, type: 2}
+  aimLine: {fileID: 50428307}
+--- !u!114 &50428303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 50428301}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 418472fa8bc248e41af27c45e9f1f39e, type: 3}
   m_Name: 

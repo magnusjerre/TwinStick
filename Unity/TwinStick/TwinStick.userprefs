@@ -1,11 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\BlowPipe.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\FiringMechanism.cs">
     <Files>
-      <File FileName="Assets\scripts\Magazine.cs" Line="10" Column="2" />
-      <File FileName="Assets\scripts\FiringMechanism.cs" Line="4" Column="31" />
-      <File FileName="Assets\scripts\Pool.cs" Line="12" Column="23" />
-      <File FileName="Assets\scripts\BlowPipe.cs" Line="7" Column="38" />
+      <File FileName="Assets\scripts\BlowPipe.cs" Line="6" Column="23" />
+      <File FileName="e:\Documents\GitHub\TwinStick\Unity\TwinStick\Assets\scripts\PlayerController.cs" Line="10" Column="24" />
+      <File FileName="Assets\scripts\FiringMechanism.cs" Line="11" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
