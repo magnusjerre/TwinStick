@@ -1,14 +1,15 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
-public class BlowPipe : FiringMechanism, Aimable {
+public class Weapon : FiringMechanism, IAimable {
 
 	public AimLine aimLine;
-
+	
 	#region Aimable implementation
 	public void IsAiming (bool value)
 	{
-		aimLine.renderAim = value;
+		if (aimLine != null)
+			aimLine.renderAim = value;
 	}
 	#endregion
 }

@@ -5,77 +5,63 @@ public class PlayerController : MonoBehaviour {
 
 	public float speed = 5f;
 	public float speedDuringAim = 2f;
-	public Transform blowpipeHandle;
+	public Transform rightHandHandle;
 
 	private Animator anim;
 	private Rigidbody body;
 
 	private int attackLayerIndex;
 
-	private BlowPipe bp;
-	private FiringMechanism fm;
-	void Awake() {
+	public Weapon weapon;
+
+	void Start() {
 		anim = GetComponent<Animator> ();
 		body = GetComponent<Rigidbody> ();
-		fm = GetComponentInChildren<FiringMechanism> ();
 		attackLayerIndex = anim.GetLayerIndex ("Attack Layer");
-
-		bp = GetComponentInChildren<BlowPipe> ();
 	}
 
 	void FixedUpdate() {
-		Vector3 move = new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis ("Vertical"));
-		Vector3 aim = new Vector3 (Input.GetAxis ("RightH"), 0, Input.GetAxis ("RightV"));
+		Vector3 moveStick = new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis ("Vertical"));
+		Vector3 aimStick = new Vector3 (Input.GetAxis ("RightH"), 0, Input.GetAxis ("RightV"));
 
 		float speedMultiplier = speed;
-		bool isAiming = false;
-		//Aim handling
-		if (isOutsideDeadZone (aim.x) || isOutsideDeadZone (aim.z)) {
-			//Aiming something somewhere
-			isAiming = true;
-			bp.IsAiming(true);
-			//bpScript.renderAim = true;
-			//bpScript.IsAiming(true);
+		bool aiming = false;
+		float aimWeight = 0f;
+
+		if (IsNonZero(aimStick)) {
+			aiming = true;
 			speedMultiplier = speedDuringAim;
-			anim.SetLayerWeight(attackLayerIndex, 1f);
-			transform.LookAt(transform.position + aim);
-			blowpipeHandle.LookAt(blowpipeHandle.position + transform.forward);
-
-			if (Input.GetAxis("FireRT") > 0.2f) {
-				//bpScript.Fire();
-				//fm.Fire();
-				bp.Fire();
-
-			}
-		} else {
-			//Not aiming anywhere...
-			isAiming = false;
-			bp.IsAiming(false);
-			//bpScript.IsAiming(false);
-			//bpScript.renderAim = false;
-			anim.SetLayerWeight(attackLayerIndex, 0f);
+			aimWeight = 1f;
+			transform.LookAt(transform.position + aimStick);
+			rightHandHandle.LookAt(rightHandHandle.position + transform.forward);
 		}
-		//The following should be moved inside the above else-statement
-		//Movement handling
-		if (isOutsideDeadZone(move.x) || isOutsideDeadZone(move.z)) {
-			anim.SetBool("isMoving", true);
-			if (!isAiming) {
-				transform.LookAt(transform.position + move);
-				anim.SetFloat("xDir", 0f);
-				anim.SetFloat("yDir", move.sqrMagnitude);
+		anim.SetLayerWeight(attackLayerIndex, aimWeight);
+		weapon.IsAiming(aiming);
+
+		if (aiming && Input.GetAxis("FireRT") > 0.2f) {
+			weapon.Fire();
+		}
+
+		bool moving = false;
+		float xDir = 0f;
+		float yDir = 0f;
+		Vector3 velocity = Vector3.zero;
+		if (IsNonZero(moveStick)) {
+			moving = true;
+			if (aiming) {
+				Vector3 relMovement = calcRelativeMoveDirection(moveStick, aimStick);
+				xDir = relMovement.x;
+				yDir = relMovement.z;
 			} else {
-				Vector3 relMovement = calcRelativeMoveDirection(move, aim);
-				anim.SetFloat("xDir", relMovement.x);
-				anim.SetFloat("yDir", relMovement.z);
+				transform.LookAt(transform.position + moveStick);
+				yDir = moveStick.sqrMagnitude;
 			}
-			body.velocity = new Vector3(move.x * speedMultiplier, 0f, move.z * speedMultiplier);
-
-		} else {
-			anim.SetBool("isMoving", false);
-			anim.SetFloat("xDir", 0f);
-			anim.SetFloat("yDir", 0f);
-			body.velocity = Vector3.zero;
-		}
+			velocity = new Vector3(moveStick.x * speedMultiplier, 0f, moveStick.z * speedMultiplier);
+		} 
+		anim.SetBool ("isMoving", moving);
+		anim.SetFloat ("xDir", xDir);
+		anim.SetFloat ("yDir", yDir);
+		body.velocity = velocity;
 	}
 
 	Vector3 calcRelativeMoveDirection(Vector3 absMoveDir, Vector3 aimDir) {
@@ -98,6 +84,10 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		return new Vector3 (sideways, 0, forward);
+	}
+
+	bool IsNonZero(Vector3 vec) {
+		return isOutsideDeadZone (vec.x) || isOutsideDeadZone (vec.z);
 	}
 
 	bool isOutsideDeadZone(float value) {

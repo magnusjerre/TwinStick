@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Enemy : Owner, Damageable {
+public class Enemy : Owner, IDamageable {
 
 	public Transform[] navPoints;
 	public float waitTime = 2f;

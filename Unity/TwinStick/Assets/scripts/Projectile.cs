@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Projectile : MonoBehaviour {
@@ -39,7 +39,7 @@ public class Projectile : MonoBehaviour {
 
 	public void OnTriggerEnter(Collider collider) {
 
-		Damageable damageable = collider.gameObject.GetComponent<Damageable> ();
+		IDamageable damageable = collider.gameObject.GetComponent<IDamageable> ();
 		if (damageable != null) {
 			damageable.DoDamage(damage, transform.position, transform.forward * -1);
 		}

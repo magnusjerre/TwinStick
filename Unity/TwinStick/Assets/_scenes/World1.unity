@@ -173,7 +173,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 50428301}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38d2fe485b33ee54781d96a79ed3d8b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f4c3c91b30bb4647a6bdc8ea644ffb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 4
@@ -185,25 +185,6 @@ MonoBehaviour:
       size: 20
       prefab: {fileID: 131980, guid: 37dff54f9a20d0d4da4a87bb036fc210, type: 2}
   aimLine: {fileID: 50428307}
---- !u!114 &50428303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 50428301}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 418472fa8bc248e41af27c45e9f1f39e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fireRate: 4
-  muzzle: {fileID: 376492616}
-  magazine:
-    size: -1
-    maxCarriable: 30
-    pool:
-      size: 20
-      prefab: {fileID: 131980, guid: 37dff54f9a20d0d4da4a87bb036fc210, type: 2}
 --- !u!114 &50428307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,6 +199,7 @@ MonoBehaviour:
   startTransf: {fileID: 376492616}
   maxAimDistance: 10
   renderAim: 0
+  mLineRenderer: {fileID: 376492617}
 --- !u!1 &64462082
 GameObject:
   m_ObjectHideFlags: 0
@@ -1856,7 +1838,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   speedDuringAim: 2
-  blowpipeHandle: {fileID: 1686211699}
+  rightHandHandle: {fileID: 1686211699}
+  weapon: {fileID: 50428302}
 --- !u!54 &1639545001
 Rigidbody:
   m_ObjectHideFlags: 0

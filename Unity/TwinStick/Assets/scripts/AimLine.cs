@@ -6,12 +6,8 @@ public class AimLine : MonoBehaviour {
 	public Transform startTransf;
 	public float maxAimDistance = 10f;
 	public bool renderAim = false;
+	public LineRenderer mLineRenderer;
 
-	LineRenderer mLineRenderer;
-	
-	void Awake() {
-		mLineRenderer = GetComponentInChildren<LineRenderer> ();
-	}
 
 	// Update is called once per frame
 	void Update () {

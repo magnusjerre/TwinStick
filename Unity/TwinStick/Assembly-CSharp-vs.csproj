@@ -53,12 +53,11 @@
      <Compile Include="Assets\old\scripts\PlayerControllerScript.cs" />
      <Compile Include="Assets\old\scripts\ShootingScript.cs" />
      <Compile Include="Assets\scripts\AimLine.cs" />
-     <Compile Include="Assets\scripts\Aimable.cs" />
-     <Compile Include="Assets\scripts\BlowPipe.cs" />
      <Compile Include="Assets\scripts\CameraFollow.cs" />
-     <Compile Include="Assets\scripts\Damageable.cs" />
      <Compile Include="Assets\scripts\Enemy.cs" />
      <Compile Include="Assets\scripts\FiringMechanism.cs" />
+     <Compile Include="Assets\scripts\IAimable.cs" />
+     <Compile Include="Assets\scripts\IDamageable.cs" />
      <Compile Include="Assets\scripts\Leaf.cs" />
      <Compile Include="Assets\scripts\LineOfSight.cs" />
      <Compile Include="Assets\scripts\Magazine.cs" />
@@ -66,6 +65,7 @@
      <Compile Include="Assets\scripts\PlayerController.cs" />
      <Compile Include="Assets\scripts\Pool.cs" />
      <Compile Include="Assets\scripts\Projectile.cs" />
+     <Compile Include="Assets\scripts\Weapon.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

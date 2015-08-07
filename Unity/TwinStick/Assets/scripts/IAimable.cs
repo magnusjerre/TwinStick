@@ -1,4 +1,4 @@
-﻿public interface Aimable {
+﻿public interface IAimable {
 
 	void IsAiming(bool value);
 
