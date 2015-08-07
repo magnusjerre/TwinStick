@@ -12,11 +12,11 @@ public class PlayerController : MonoBehaviour {
 
 	private int attackLayerIndex;
 	private BlowPipe bpScript;
-
+	private FiringMechanism fm;
 	void Awake() {
 		anim = GetComponent<Animator> ();
 		body = GetComponent<Rigidbody> ();
-
+		fm = GetComponentInChildren<FiringMechanism> ();
 		attackLayerIndex = anim.GetLayerIndex ("Attack Layer");
 		bpScript = GetComponentInChildren<BlowPipe> ();
 	}
@@ -31,19 +31,23 @@ public class PlayerController : MonoBehaviour {
 		if (isOutsideDeadZone (aim.x) || isOutsideDeadZone (aim.z)) {
 			//Aiming something somewhere
 			isAiming = true;
-			bpScript.renderAim = true;
+			//bpScript.renderAim = true;
+			//bpScript.IsAiming(true);
 			speedMultiplier = speedDuringAim;
 			anim.SetLayerWeight(attackLayerIndex, 1f);
 			transform.LookAt(transform.position + aim);
 			blowpipeHandle.LookAt(blowpipeHandle.position + transform.forward);
 
 			if (Input.GetAxis("FireRT") > 0.2f) {
-				bpScript.Fire();
+				//bpScript.Fire();
+				fm.Fire();
+
 			}
 		} else {
 			//Not aiming anywhere...
 			isAiming = false;
-			bpScript.renderAim = false;
+			//bpScript.IsAiming(false);
+			//bpScript.renderAim = false;
 			anim.SetLayerWeight(attackLayerIndex, 0f);
 		}
 		//The following should be moved inside the above else-statement

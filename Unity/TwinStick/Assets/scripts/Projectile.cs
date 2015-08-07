@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Bullet : MonoBehaviour {
+public class Projectile : MonoBehaviour {
 
 	public float speed = 300f;
 	public float damage = 50f;
@@ -22,6 +22,7 @@ public class Bullet : MonoBehaviour {
 			timeLeft -= Time.deltaTime;
 			if (timeLeft < 0f) {
 				body.velocity = Vector3.zero;
+				ResetTimer();
 				gameObject.SetActive(false);
 			}
 		}
@@ -37,13 +38,9 @@ public class Bullet : MonoBehaviour {
 	}
 
 	public void OnTriggerEnter(Collider collider) {
-		Debug.Log ("BAM! Collided!");
 
 		Damageable damageable = collider.gameObject.GetComponent<Damageable> ();
 		if (damageable != null) {
-			Ray ray = new Ray(transform.position, transform.forward);
-			RaycastHit hit;
-			Physics.Raycast (ray, out hit, 1f);
 			damageable.DoDamage(damage, transform.position, transform.forward * -1);
 		}
 

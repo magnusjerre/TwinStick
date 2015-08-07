@@ -1,24 +1,20 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
-public class BlowPipe : MonoBehaviour {
+public class BlowPipe : MonoBehaviour, Aimable {
 
-	public float maxAimDistance = 10f;
 	public float fireRate = 4f;	//Max bullets per second
-	public Transform muzzle;
-	public bool renderAim = false;
-
 	private float minTimeBetweenBullets;
 	private float timeLeftToNextBullet = 0f;
+	private Pool bManager;
 
-	private BulletManager bManager;
-	private LineRenderer mLineRenderer;
-
+	public Transform muzzle;
+	private AimLine aimLine;
 
 	void Awake() {
-		bManager = GetComponent<BulletManager> ();
+//		bManager = GetComponent<Pool> ();
+		aimLine = GetComponent<AimLine> ();
 		minTimeBetweenBullets = 1f / fireRate;
-		mLineRenderer = GetComponentInChildren<LineRenderer> ();
 	}
 
 	// Use this for initialization
@@ -30,34 +26,21 @@ public class BlowPipe : MonoBehaviour {
 	void Update () {
 
 		timeLeftToNextBullet -= Time.deltaTime;
-
-		if (renderAim) {
-			mLineRenderer.enabled = true;
-			RenderLine ();
-		} else {
-			mLineRenderer.enabled = false;
-		}
-
-	}
-
-	public void RenderLine() {
-		Ray ray = new Ray (muzzle.position, muzzle.forward);
-		RaycastHit rHit;
-		int layerMask = 1 << 8 | 1 << 9;
-		layerMask = ~layerMask;
-		if (Physics.Raycast (ray, out rHit, 10f, layerMask)) {
-			mLineRenderer.SetPosition (1, transform.InverseTransformPoint (muzzle.position + (muzzle.forward * rHit.distance)));
-		} else {
-			mLineRenderer.SetPosition(1, transform.InverseTransformPoint(muzzle.position + muzzle.forward * maxAimDistance));
-		}
 	}
 
 	public void Fire() {
 
 		if (timeLeftToNextBullet < 0f) {
-			bManager.FireBullet(muzzle);
+			//bManager.FindAvailable(muzzle);
 			timeLeftToNextBullet = minTimeBetweenBullets;
 		}
 
 	}
+	
+	#region Aimable implementation
+	public void IsAiming (bool value)
+	{
+		aimLine.renderAim = value;
+	}
+	#endregion
 }
