@@ -5,12 +5,17 @@ Frame 62 - 91: Walk backwards cycle
 Frame 92 - 121: Left walk cycle
 Frame 122 - 151: Right walk cycle
 Frame 152 - 166: Run cycle
+
+//old
 Frame 167 - 176: Grenade throw
 Frame 177 - 178: Blow pipe handle
 Frame 179 - 208: Death
 
 
-Revised:
+//new
 Frame 167 - 196: Death
 Frame 197 - 198: Blow Pipe
 Frame 199 - 228: Grenade Throw
+
+
+filename: character1_animations

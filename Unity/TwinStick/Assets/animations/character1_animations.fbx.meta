@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 0b205caebd8645f4f89fcae4374d8f5f
-timeCreated: 1438689716
+timeCreated: 1438963047
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -105,9 +105,9 @@ ModelImporter:
     7400006: walk_cycle_left
     7400008: walk_cycle_right
     7400010: run_cycle
-    7400012: grenade_throw
-    7400014: blow_pip_aim
-    7400016: death
+    7400012: death
+    7400014: blow_pip_anim
+    7400016: grenade_throw
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -868,10 +868,10 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: grenade_throw
-      takeName: grenade_throw
+      name: death
+      takeName: death
       firstFrame: 167
-      lastFrame: 176
+      lastFrame: 196
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -991,16 +991,16 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: blow_pip_aim
-      takeName: blow_pip_aim
-      firstFrame: 177
-      lastFrame: 178
+      name: blow_pip_anim
+      takeName: blow_pip_anim
+      firstFrame: 197
+      lastFrame: 198
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -1114,10 +1114,10 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: death
-      takeName: death
-      firstFrame: 179
-      lastFrame: 208
+      name: grenade_throw
+      takeName: grenade_throw
+      firstFrame: 1
+      lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
