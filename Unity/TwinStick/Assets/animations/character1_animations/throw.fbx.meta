@@ -1,0 +1,165 @@
+fileFormatVersion: 2
+guid: bb29d62339b942548bc7604e91faf805
+timeCreated: 1439056845
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: belly
+    100002: chest
+    100004: head
+    100006: hip
+    100008: jaw
+    100010: joint27
+    100012: joint29
+    100014: joint29 1
+    100016: joint31
+    100018: joint33
+    100020: joint45
+    100022: joint45 1
+    100024: joint46
+    100026: joint46 1
+    100028: joint47
+    100030: joint47 1
+    100032: joint48
+    100034: joint48 1
+    100036: joint5
+    100038: joint5 1
+    100040: L_ArmLow
+    100042: L_ArmUp
+    100044: L_ear
+    100046: L_Finger1
+    100048: L_foot
+    100050: L_Hand
+    100052: L_Hand2
+    100054: L_legLower
+    100056: L_legUpper
+    100058: L_Thumb1
+    100060: L_Thumb2
+    100062: L_toe
+    100064: neck
+    100066: R_ArmLow
+    100068: R_ArmUp
+    100070: R_ear
+    100072: R_Finger1
+    100074: R_foot
+    100076: R_Hand
+    100078: R_Hand2
+    100080: R_legLower
+    100082: R_legUpper
+    100084: R_Thumb1
+    100086: R_Thumb2
+    100088: R_toe
+    100090: snout
+    100092: //RootNode
+    400000: belly
+    400002: chest
+    400004: head
+    400006: hip
+    400008: jaw
+    400010: joint27
+    400012: joint29
+    400014: joint29 1
+    400016: joint31
+    400018: joint33
+    400020: joint45
+    400022: joint45 1
+    400024: joint46
+    400026: joint46 1
+    400028: joint47
+    400030: joint47 1
+    400032: joint48
+    400034: joint48 1
+    400036: joint5
+    400038: joint5 1
+    400040: L_ArmLow
+    400042: L_ArmUp
+    400044: L_ear
+    400046: L_Finger1
+    400048: L_foot
+    400050: L_Hand
+    400052: L_Hand2
+    400054: L_legLower
+    400056: L_legUpper
+    400058: L_Thumb1
+    400060: L_Thumb2
+    400062: L_toe
+    400064: neck
+    400066: R_ArmLow
+    400068: R_ArmUp
+    400070: R_ear
+    400072: R_Finger1
+    400074: R_foot
+    400076: R_Hand
+    400078: R_Hand2
+    400080: R_legLower
+    400082: R_legUpper
+    400084: R_Thumb1
+    400086: R_Thumb2
+    400088: R_toe
+    400090: snout
+    400092: //RootNode
+    7400000: throw
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

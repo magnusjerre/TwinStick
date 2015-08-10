@@ -1,0 +1,288 @@
+fileFormatVersion: 2
+guid: 8320b1bf75a631148bcfc4f0beac0aa8
+timeCreated: 1439056844
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: belly
+    100002: //RootNode
+    100004: chest
+    100006: head
+    100008: hip
+    100010: jaw
+    100012: joint27
+    100014: joint29
+    100016: joint29 1
+    100018: joint31
+    100020: joint33
+    100022: joint45
+    100024: joint45 1
+    100026: joint46
+    100028: joint46 1
+    100030: joint47
+    100032: joint47 1
+    100034: joint48
+    100036: joint48 1
+    100038: joint5
+    100040: joint5 1
+    100042: L_ArmLow
+    100044: L_ArmUp
+    100046: L_ear
+    100048: L_Finger1
+    100050: L_foot
+    100052: L_Hand
+    100054: L_Hand2
+    100056: L_legLower
+    100058: L_legUpper
+    100060: L_Thumb1
+    100062: L_Thumb2
+    100064: L_toe
+    100066: neck
+    100068: R_ArmLow
+    100070: R_ArmUp
+    100072: R_ear
+    100074: R_Finger1
+    100076: R_foot
+    100078: R_Hand
+    100080: R_Hand2
+    100082: R_legLower
+    100084: R_legUpper
+    100086: R_Thumb1
+    100088: R_Thumb2
+    100090: R_toe
+    100092: snout
+    400000: belly
+    400002: //RootNode
+    400004: chest
+    400006: head
+    400008: hip
+    400010: jaw
+    400012: joint27
+    400014: joint29
+    400016: joint29 1
+    400018: joint31
+    400020: joint33
+    400022: joint45
+    400024: joint45 1
+    400026: joint46
+    400028: joint46 1
+    400030: joint47
+    400032: joint47 1
+    400034: joint48
+    400036: joint48 1
+    400038: joint5
+    400040: joint5 1
+    400042: L_ArmLow
+    400044: L_ArmUp
+    400046: L_ear
+    400048: L_Finger1
+    400050: L_foot
+    400052: L_Hand
+    400054: L_Hand2
+    400056: L_legLower
+    400058: L_legUpper
+    400060: L_Thumb1
+    400062: L_Thumb2
+    400064: L_toe
+    400066: neck
+    400068: R_ArmLow
+    400070: R_ArmUp
+    400072: R_ear
+    400074: R_Finger1
+    400076: R_foot
+    400078: R_Hand
+    400080: R_Hand2
+    400082: R_legLower
+    400084: R_legUpper
+    400086: R_Thumb1
+    400088: R_Thumb2
+    400090: R_toe
+    400092: snout
+    7400000: blow_pipe
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: blow_pipe
+      takeName: blow_pipe
+      firstFrame: 197
+      lastFrame: 198
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: hip
+        weight: 1
+      - path: hip/belly
+        weight: 1
+      - path: hip/belly/chest
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46/joint47
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Finger1/joint46/joint47/joint48
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1/L_Thumb2
+        weight: 1
+      - path: hip/belly/chest/L_ArmUp/L_ArmLow/L_Hand/L_Hand2/L_Thumb1/L_Thumb2/joint45
+        weight: 1
+      - path: hip/belly/chest/neck
+        weight: 1
+      - path: hip/belly/chest/neck/head
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/jaw
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/jaw/joint33
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/L_ear
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/L_ear/joint29
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/R_ear
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/R_ear/joint29 1
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/snout
+        weight: 1
+      - path: hip/belly/chest/neck/head/joint27/snout/joint31
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1/joint47
+          1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Finger1/joint46 1/joint47
+          1/joint48 1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1/R_Thumb2
+        weight: 1
+      - path: hip/belly/chest/R_ArmUp/R_ArmLow/R_Hand/R_Hand2/R_Thumb1/R_Thumb2/joint45
+          1
+        weight: 1
+      - path: hip/L_legUpper
+        weight: 1
+      - path: hip/L_legUpper/L_legLower
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot/L_toe
+        weight: 1
+      - path: hip/L_legUpper/L_legLower/L_foot/L_toe/joint5
+        weight: 1
+      - path: hip/R_legUpper
+        weight: 1
+      - path: hip/R_legUpper/R_legLower
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot/R_toe
+        weight: 1
+      - path: hip/R_legUpper/R_legLower/R_foot/R_toe/joint5 1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
