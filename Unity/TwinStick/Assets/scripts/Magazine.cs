@@ -15,7 +15,7 @@ public class Magazine {
 		pool.Setup (); 
 	}
 
-	public void FireProjectile(Transform exit) {
+	public void FireProjectile(Transform exit, Vector3 direction) {
 		if (currentAmount != 0) {
 			GameObject projectile = pool.FindAvailable();
 			projectile.transform.position = exit.position;
@@ -23,7 +23,7 @@ public class Magazine {
 
 			Projectile projectileScript = projectile.GetComponent<Projectile>();
 			projectileScript.ResetTimer();
-			projectileScript.Fire();
+			projectileScript.Fire(direction);
 
 			currentAmount--;
 		}

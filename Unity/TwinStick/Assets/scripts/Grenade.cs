@@ -17,10 +17,11 @@ public class Grenade : Projectile {
 		Reset ();
 	}
 
-	public override void Fire() {
-		Vector3 forceDir = transform.forward;
+	public override void Fire(Vector3 direction) {
+		/*Vector3 forceDir = transform.forward;
 		forceDir += transform.up;
-		body.AddForce(forceDir * speed);
+		body.AddForce(forceDir * speed);*/
+		body.AddForce (direction * speed);
 	}
 
 	// Update is called once per frame

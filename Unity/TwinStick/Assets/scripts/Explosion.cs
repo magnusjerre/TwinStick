@@ -19,7 +19,11 @@ public class Explosion : MonoBehaviour {
 		insideBlastRadius = new GameObject[maxObjectsInsideExplosion];	
 		Reset ();
 	}
-	
+
+	void FixedUpdate() {
+		transform.LookAt (transform.position + Vector3.forward);	//Object is apparently rotated, the intuitive thing would be to use Vector3.up...
+	}
+
 	public void OnTriggerEnter(Collider collider) {
 
 		IDamageable damageable = collider.gameObject.GetComponent<IDamageable> ();

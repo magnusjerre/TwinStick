@@ -15,10 +15,15 @@ public class PlayerController : MonoBehaviour {
 
 	public Weapon weapon;
 	public FiringMechanism grenadeThrowMech;
+	public GameObject dummyGrenade;
+	private float grenadeTimer = 0f;
+	private float aimTimer = 0f;
+	private bool aiming = false;
 
 	void Start() {
 		anim = GetComponent<Animator> ();
 		body = GetComponent<Rigidbody> ();
+		dummyGrenade.SetActive (false);
 		attackLayerIndex = anim.GetLayerIndex ("Attack Layer");
 	}
 
@@ -27,39 +32,51 @@ public class PlayerController : MonoBehaviour {
 		Vector3 aimStick = new Vector3 (Input.GetAxis ("RightH"), 0, Input.GetAxis ("RightV"));
 
 		float speedMultiplier = speed;
-		bool aiming = false;
+		//bool aiming = false;
 		float aimWeight = 0f;
-
-		if (IsNonZero(aimStick)) {
+		aimTimer += Time.deltaTime;
+		if (IsNonZero (aimStick)) {
 			aiming = true;
 			speedMultiplier = speedDuringAim;
 			aimWeight = 1f;
-			transform.LookAt(transform.position + aimStick);
-			rightHandHandle.LookAt(rightHandHandle.position + transform.forward);
+			transform.LookAt (transform.position + aimStick);
+			rightHandHandle.LookAt (rightHandHandle.position + transform.forward);
+		} else {
+			aiming = false;
+			aimTimer = 0f;
 		}
 		anim.SetLayerWeight(attackLayerIndex, aimWeight);
 		weapon.IsAiming(aiming);
 
-		if (aiming && Input.GetAxis("FireRT") > 0.2f) {
-			weapon.Fire();
+		if (aiming && !isThrowing && aimTimer > 0.1f && Input.GetAxis("FireRT") > 0.2f) {
+			weapon.Fire(weapon.muzzle.forward);
 		}
 
-		if (aiming && !isThrowing && Input.GetAxis ("FireLT") > 0.2f) {
-			anim.SetTrigger("throw");
+		if (Input.GetAxis ("FireLT") > 0.2f) {
+
+			if (aiming) {
+				if (!isThrowing) {
+					Debug.Log("throwthrow");
+					anim.SetTrigger("throw");
+					dummyGrenade.SetActive(true);
+				}
+			} else {
+				grenadeThrowMech.Fire(Vector3.zero);	//Drop it
+			}
 			isThrowing = true;
-			grenadeThrowMech.Fire();
 		}
 
 		if (isThrowing) {
-			AnimatorStateInfo asi = anim.GetCurrentAnimatorStateInfo (attackLayerIndex);
-			float nTime = asi.normalizedTime - (int) asi.normalizedTime;
-			if (nTime > 0.383) {
-				//Debug.Log ("Should let go of grenade");
-			}
-			if (nTime > 0.95f) {
+			grenadeTimer += Time.deltaTime;
+			anim.SetLayerWeight(attackLayerIndex, 1f);
+			if (grenadeTimer > 0.385f) {
+				dummyGrenade.SetActive(false);
+				grenadeThrowMech.Fire(grenadeThrowMech.muzzle.forward + grenadeThrowMech.muzzle.up);
+			} if (grenadeTimer > 0.9f) {
 				isThrowing = false;
+				grenadeTimer = 0f;
+				anim.SetLayerWeight(attackLayerIndex, 0f);
 			}
-
 		}
 
 		bool moving = false;

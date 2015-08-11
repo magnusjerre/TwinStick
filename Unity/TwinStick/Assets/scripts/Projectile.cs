@@ -37,8 +37,9 @@ public class Projectile : MonoBehaviour {
 		timeLeft = timeToLive;
 	}
 
-	public virtual void Fire() {
-		body.AddForce (transform.forward * speed);
+	public virtual void Fire(Vector3 direction) {
+		body.AddForce (direction * speed);
+		//body.AddForce (transform.forward * speed);
 	}
 
 	public virtual void OnTriggerEnter(Collider collider) {

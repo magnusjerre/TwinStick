@@ -20,10 +20,10 @@ public class FiringMechanism : MonoBehaviour {
 		timeLeftToFire -= Time.deltaTime;
 	}
 	
-	public virtual void Fire() {
+	public virtual void Fire(Vector3 direction) {
 		
 		if (timeLeftToFire < 0f) {
-			magazine.FireProjectile(muzzle);
+			magazine.FireProjectile(muzzle, direction);
 			timeLeftToFire = minTimeBetweenFire;
 		}
 		
