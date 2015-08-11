@@ -7,37 +7,41 @@ public class Projectile : MonoBehaviour {
 	public float damage = 50f;
 	public float timeToLive = 3f;
 
-	private float timeLeft;
-	private Rigidbody body;
+	protected float timeLeft;
+	protected Rigidbody body;
 
-	void Awake() {
+	public virtual void Awake() {
 		timeLeft = timeToLive;
 		body = GetComponent<Rigidbody> ();
 	}
 
 	// Update is called once per frame
-	void Update () {
+	public virtual void Update () {
 
 		if (gameObject.activeSelf) {
 			timeLeft -= Time.deltaTime;
 			if (timeLeft < 0f) {
-				body.velocity = Vector3.zero;
-				ResetTimer();
-				gameObject.SetActive(false);
+				Reset();
 			}
 		}
 	
 	}
 
-	public void ResetTimer() {
+	public virtual void Reset() {
+		ResetTimer ();
+		gameObject.SetActive (false);
+		body.velocity = Vector3.zero;
+	}
+
+	public virtual void ResetTimer() {
 		timeLeft = timeToLive;
 	}
 
-	public void Fire() {
+	public virtual void Fire() {
 		body.AddForce (transform.forward * speed);
 	}
 
-	public void OnTriggerEnter(Collider collider) {
+	public virtual void OnTriggerEnter(Collider collider) {
 
 		IDamageable damageable = collider.gameObject.GetComponent<IDamageable> ();
 		if (damageable != null) {

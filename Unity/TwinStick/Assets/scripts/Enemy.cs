@@ -115,7 +115,7 @@ public class Enemy : Owner, IDamageable {
 		particles.Play ();
 
 		if (health < 1) {
-			Debug.Log ("enemy down");
+			//Debug.Log ("enemy down");
 			anim.SetTrigger("death");
 			DisableBoxes();
 		}

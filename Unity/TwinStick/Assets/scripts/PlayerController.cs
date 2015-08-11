@@ -11,8 +11,10 @@ public class PlayerController : MonoBehaviour {
 	private Rigidbody body;
 
 	private int attackLayerIndex;
+	private bool isThrowing = false;
 
 	public Weapon weapon;
+	public FiringMechanism grenadeThrowMech;
 
 	void Start() {
 		anim = GetComponent<Animator> ();
@@ -40,6 +42,24 @@ public class PlayerController : MonoBehaviour {
 
 		if (aiming && Input.GetAxis("FireRT") > 0.2f) {
 			weapon.Fire();
+		}
+
+		if (aiming && !isThrowing && Input.GetAxis ("FireLT") > 0.2f) {
+			anim.SetTrigger("throw");
+			isThrowing = true;
+			grenadeThrowMech.Fire();
+		}
+
+		if (isThrowing) {
+			AnimatorStateInfo asi = anim.GetCurrentAnimatorStateInfo (attackLayerIndex);
+			float nTime = asi.normalizedTime - (int) asi.normalizedTime;
+			if (nTime > 0.383) {
+				//Debug.Log ("Should let go of grenade");
+			}
+			if (nTime > 0.95f) {
+				isThrowing = false;
+			}
+
 		}
 
 		bool moving = false;
