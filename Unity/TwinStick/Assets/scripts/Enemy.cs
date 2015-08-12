@@ -7,13 +7,16 @@ public class Enemy : Owner, IDamageable {
 	public float waitTime = 2f;
 	public float health = 100f;
 	public ParticleSystem particleSystemPrefab;
+	public float timeToRemoveOnDeath = 3f;
 	
 	Animator anim;
 	NavMeshAgent agent;
 
+	float healthLeft;
 	float elapsedWaitTime = 0f;
 	bool isWaiting = false;
 	int currentNavTarget = 0;
+	float deathTimer;
 
 	bool playerInSight = false;
 	float minPlayerFollowDt = 0.2f;
@@ -29,11 +32,8 @@ public class Enemy : Owner, IDamageable {
 		agent = GetComponent<NavMeshAgent> ();
 		target = GameObject.FindGameObjectWithTag ("Player");
 		cCollider = GetComponent<CapsuleCollider> ();
-		isWaiting = true;
+		Reset ();
 		particles = (ParticleSystem)Instantiate (particleSystemPrefab);
-		Debug.Log ("ps: " + particleSystemPrefab);
-
-
 	}
 
 	// Use this for initialization
@@ -42,8 +42,17 @@ public class Enemy : Owner, IDamageable {
 	
 	// Update is called once per frame
 	void Update () {
-		if (health < 1) 
+		if (!gameObject.activeSelf)
 			return;
+
+		if (healthLeft < 1) {
+			deathTimer -= Time.deltaTime;
+			if (deathTimer < 0f) {
+				Reset();
+				gameObject.SetActive(false);
+			}
+			return;
+		}
 
 		if (playerInSight) {
 			playerFollowLeft -= Time.deltaTime;
@@ -60,6 +69,7 @@ public class Enemy : Owner, IDamageable {
 			if (elapsedWaitTime > waitTime) {
 				elapsedWaitTime = 0f;
 				currentNavTarget = (currentNavTarget + 1) % navPoints.Length;
+				Debug.Log ("gameobject.activeSelf: " + gameObject.activeSelf);
 				agent.destination = navPoints [currentNavTarget].position;
 				isWaiting = false;
 			}
@@ -108,13 +118,13 @@ public class Enemy : Owner, IDamageable {
 
 	public void DoDamage (float damage, Vector3 point, Vector3 normal)
 	{
-		health -= damage;
+		healthLeft -= damage;
 
 		particles.transform.position = point;
 		particles.transform.LookAt (point + normal);
 		particles.Play ();
 
-		if (health < 1) {
+		if (healthLeft < 1) {
 			//Debug.Log ("enemy down");
 			anim.SetTrigger("death");
 			DisableBoxes();
@@ -127,5 +137,13 @@ public class Enemy : Owner, IDamageable {
 	void DisableBoxes() {
 		cCollider.enabled = false;
 		agent.enabled = false;
+	}
+
+	public void Reset() {
+		isWaiting = true;
+		healthLeft = health;
+		deathTimer = timeToRemoveOnDeath;
+		cCollider.enabled = true;
+		agent.enabled = true;
 	}
 }

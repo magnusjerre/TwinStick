@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 300
-  damage: 50
+  damage: 150
   timeToLive: 2
   explosion: {fileID: 11475468}
 --- !u!114 &11475468
@@ -1344,7 +1344,7 @@ Prefab:
       objectReference: {fileID: 11475468}
     - target: {fileID: 0}
       propertyPath: damage
-      value: 50
+      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

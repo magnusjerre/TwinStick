@@ -62,6 +62,7 @@
      <Compile Include="Assets\scripts\PlayerController.cs" />
      <Compile Include="Assets\scripts\Pool.cs" />
      <Compile Include="Assets\scripts\Projectile.cs" />
+     <Compile Include="Assets\scripts\Spawner.cs" />
      <Compile Include="Assets\scripts\Weapon.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

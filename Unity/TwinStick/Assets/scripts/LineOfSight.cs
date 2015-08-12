@@ -7,12 +7,12 @@ public class LineOfSight : MonoBehaviour {
 	public Owner observer;
 
 	void OnTriggerEnter(Collider collider) {
-		if (collider.gameObject == target)
+		if (collider.gameObject.CompareTag(target.tag))
 			observer.NotifyTargetAcquired (target);
 	}
 
 	void OnTriggerExit(Collider collider) {
-		if (collider.gameObject == target)
+		if (collider.gameObject.CompareTag(target.tag))
 			observer.NotifyTargetLost (target);
 	}
 

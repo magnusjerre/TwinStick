@@ -25,10 +25,10 @@ public class Explosion : MonoBehaviour {
 	}
 
 	public void OnTriggerEnter(Collider collider) {
-
 		IDamageable damageable = collider.gameObject.GetComponent<IDamageable> ();
-		if (damageable != null && PosOfGameObject (collider.gameObject) == -1)
+		if (damageable != null && PosOfGameObject (collider.gameObject) == -1) {
 			AddGameObject (collider.gameObject);
+		}
 		
 	}
 
@@ -56,9 +56,10 @@ public class Explosion : MonoBehaviour {
 
 	void AddGameObject(GameObject obj) {
 		for (int i = 0; i < insideBlastRadius.Length; i++) {
-			if (insideBlastRadius[i] == null)
+			if (insideBlastRadius[i] == null) {
 				insideBlastRadius[i] = obj;
-			break;
+				break;
+			}
 		}
 	}
 
