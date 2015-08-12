@@ -8,7 +8,9 @@ public class Enemy : Owner, IDamageable {
 	public float health = 100f;
 	public ParticleSystem particleSystemPrefab;
 	public float timeToRemoveOnDeath = 3f;
-	
+	public float damageDealt = 50f;
+	public float minTimeBetweenDamage = 1f;
+
 	Animator anim;
 	NavMeshAgent agent;
 
@@ -17,6 +19,7 @@ public class Enemy : Owner, IDamageable {
 	bool isWaiting = false;
 	int currentNavTarget = 0;
 	float deathTimer;
+	float damageTimer;
 
 	bool playerInSight = false;
 	float minPlayerFollowDt = 0.2f;
@@ -45,6 +48,8 @@ public class Enemy : Owner, IDamageable {
 		if (!gameObject.activeSelf)
 			return;
 
+		damageTimer -= Time.deltaTime;
+
 		if (healthLeft < 1) {
 			deathTimer -= Time.deltaTime;
 			if (deathTimer < 0f) {
@@ -55,6 +60,12 @@ public class Enemy : Owner, IDamageable {
 		}
 
 		if (playerInSight) {
+			Vector3 distance = target.transform.position - transform.position;
+			if (distance.sqrMagnitude < 0.5f && damageTimer < 0) {
+				target.GetComponent<IDamageable>().DoDamage(damageDealt, Vector3.zero, Vector3.zero);
+				damageTimer = minTimeBetweenDamage;
+			}
+
 			playerFollowLeft -= Time.deltaTime;
 			if (playerFollowLeft < 0) {
 				playerFollowLeft = minPlayerFollowDt;
@@ -69,7 +80,6 @@ public class Enemy : Owner, IDamageable {
 			if (elapsedWaitTime > waitTime) {
 				elapsedWaitTime = 0f;
 				currentNavTarget = (currentNavTarget + 1) % navPoints.Length;
-				Debug.Log ("gameobject.activeSelf: " + gameObject.activeSelf);
 				agent.destination = navPoints [currentNavTarget].position;
 				isWaiting = false;
 			}
@@ -125,7 +135,6 @@ public class Enemy : Owner, IDamageable {
 		particles.Play ();
 
 		if (healthLeft < 1) {
-			//Debug.Log ("enemy down");
 			anim.SetTrigger("death");
 			DisableBoxes();
 		}
@@ -145,5 +154,6 @@ public class Enemy : Owner, IDamageable {
 		deathTimer = timeToRemoveOnDeath;
 		cCollider.enabled = true;
 		agent.enabled = true;
+		damageTimer = minTimeBetweenDamage;
 	}
 }

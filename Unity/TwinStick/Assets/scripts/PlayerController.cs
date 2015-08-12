@@ -1,17 +1,20 @@
 using UnityEngine;
 using System.Collections;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour, IDamageable {
 
 	public float speed = 5f;
 	public float speedDuringAim = 2f;
 	public Transform rightHandHandle;
+	public float health = 300f;
+	private bool isDead;
 
 	private Animator anim;
 	private Rigidbody body;
 
 	private int attackLayerIndex;
 	private bool isThrowing = false;
+	private float healthLeft;
 
 	public Weapon weapon;
 	public FiringMechanism grenadeThrowMech;
@@ -19,20 +22,24 @@ public class PlayerController : MonoBehaviour {
 	private float grenadeTimer = 0f;
 	private float aimTimer = 0f;
 	private bool aiming = false;
+	private CapsuleCollider capsuleCollider;
 
 	void Start() {
 		anim = GetComponent<Animator> ();
 		body = GetComponent<Rigidbody> ();
-		dummyGrenade.SetActive (false);
+		capsuleCollider = GetComponent<CapsuleCollider> ();
 		attackLayerIndex = anim.GetLayerIndex ("Attack Layer");
+		Reset ();
 	}
 
 	void FixedUpdate() {
+		if (isDead)
+			return;
+
 		Vector3 moveStick = new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis ("Vertical"));
 		Vector3 aimStick = new Vector3 (Input.GetAxis ("RightH"), 0, Input.GetAxis ("RightV"));
 
 		float speedMultiplier = speed;
-		//bool aiming = false;
 		float aimWeight = 0f;
 		aimTimer += Time.deltaTime;
 		if (IsNonZero (aimStick)) {
@@ -136,5 +143,32 @@ public class PlayerController : MonoBehaviour {
 	}
 	bool isBetween(float min, float max, float value) {
 		return min <= value && value <= max;	
+	}
+
+	#region IDamageable implementation
+
+	public void DoDamage (float damage, Vector3 point, Vector3 normal)
+	{
+		if (!isDead) {
+			healthLeft -= damage;
+			if (healthLeft < 0) {
+				anim.SetTrigger ("death");
+				DisableBoxes ();
+				isDead = true;
+			}
+		}
+	}
+
+	#endregion
+
+	public void Reset() {
+		healthLeft = health;
+		dummyGrenade.SetActive (false);
+		capsuleCollider.enabled = true;
+		isDead = false;
+	}
+
+	void DisableBoxes() {
+		capsuleCollider.enabled = false;
 	}
 }

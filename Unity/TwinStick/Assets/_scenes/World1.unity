@@ -1829,6 +1829,7 @@ MonoBehaviour:
   speed: 5
   speedDuringAim: 2
   rightHandHandle: {fileID: 1686211699}
+  health: 300
   weapon: {fileID: 50428302}
   grenadeThrowMech: {fileID: 1939711993}
   dummyGrenade: {fileID: 454951709}
