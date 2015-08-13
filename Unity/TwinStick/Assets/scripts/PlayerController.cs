@@ -147,7 +147,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
 
 	#region IDamageable implementation
 
-	public void DoDamage (float damage, Vector3 point, Vector3 normal)
+	public void DoDamage (float damage, Vector3 point, Vector3 normal, ProjectileType type)
 	{
 		if (!isDead) {
 			healthLeft -= damage;

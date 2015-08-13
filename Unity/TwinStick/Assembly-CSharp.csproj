@@ -58,10 +58,13 @@
      <Compile Include="Assets\scripts\Leaf.cs" />
      <Compile Include="Assets\scripts\LineOfSight.cs" />
      <Compile Include="Assets\scripts\Magazine.cs" />
+     <Compile Include="Assets\scripts\Medal.cs" />
      <Compile Include="Assets\scripts\Owner.cs" />
      <Compile Include="Assets\scripts\PlayerController.cs" />
      <Compile Include="Assets\scripts\Pool.cs" />
      <Compile Include="Assets\scripts\Projectile.cs" />
+     <Compile Include="Assets\scripts\ProjectileType.cs" />
+     <Compile Include="Assets\scripts\ScoreManager.cs" />
      <Compile Include="Assets\scripts\Spawner.cs" />
      <Compile Include="Assets\scripts\Weapon.cs" />
  <Reference Include="UnityEngine.UI">

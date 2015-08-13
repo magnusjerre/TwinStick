@@ -1,8 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\PlayerController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\Explosion.cs">
     <Files>
-      <File FileName="Assets\scripts\PlayerController.cs" Line="18" Column="2" />
+      <File FileName="Assets\scripts\ScoreManager.cs" Line="55" Column="33" />
+      <File FileName="Assets\scripts\Medal.cs" Line="6" Column="45" />
+      <File FileName="Assets\scripts\Explosion.cs" Line="25" Column="3" />
+      <File FileName="Assets\scripts\Enemy.cs" Line="141" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

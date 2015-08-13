@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour {
 	public float speed = 300f;
 	public float damage = 50f;
 	public float timeToLive = 3f;
+	public ProjectileType pType;
 
 	protected float timeLeft;
 	protected Rigidbody body;
@@ -46,7 +47,7 @@ public class Projectile : MonoBehaviour {
 
 		IDamageable damageable = collider.gameObject.GetComponent<IDamageable> ();
 		if (damageable != null) {
-			damageable.DoDamage(damage, transform.position, transform.forward * -1);
+			damageable.DoDamage(damage, transform.position, transform.forward * -1, pType);
 		}
 
 		gameObject.SetActive (false);

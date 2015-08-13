@@ -8,6 +8,7 @@ TagManager:
   - BlowpipeHandle
   - LineOfSight
   - Explosion
+  - ScoreManager
   layers:
   - Default
   - TransparentFX

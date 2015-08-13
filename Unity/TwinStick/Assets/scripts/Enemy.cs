@@ -28,6 +28,7 @@ public class Enemy : Owner, IDamageable {
 	GameObject target;
 	CapsuleCollider cCollider;
 	ParticleSystem particles;
+	ScoreManager scoreManager;
 
 	void Awake() {
 		transform.position = navPoints [0].position;
@@ -37,6 +38,7 @@ public class Enemy : Owner, IDamageable {
 		cCollider = GetComponent<CapsuleCollider> ();
 		Reset ();
 		particles = (ParticleSystem)Instantiate (particleSystemPrefab);
+		scoreManager = GameObject.FindGameObjectWithTag ("ScoreManager").GetComponent<ScoreManager>();
 	}
 
 	// Use this for initialization
@@ -62,7 +64,7 @@ public class Enemy : Owner, IDamageable {
 		if (playerInSight) {
 			Vector3 distance = target.transform.position - transform.position;
 			if (distance.sqrMagnitude < 0.5f && damageTimer < 0) {
-				target.GetComponent<IDamageable>().DoDamage(damageDealt, Vector3.zero, Vector3.zero);
+				target.GetComponent<IDamageable>().DoDamage(damageDealt, Vector3.zero, Vector3.zero, ProjectileType.BULLET);
 				damageTimer = minTimeBetweenDamage;
 			}
 
@@ -126,7 +128,7 @@ public class Enemy : Owner, IDamageable {
 
 	#region Damageable implementation
 
-	public void DoDamage (float damage, Vector3 point, Vector3 normal)
+	public void DoDamage (float damage, Vector3 point, Vector3 normal, ProjectileType type)
 	{
 		healthLeft -= damage;
 
@@ -136,6 +138,7 @@ public class Enemy : Owner, IDamageable {
 
 		if (healthLeft < 1) {
 			anim.SetTrigger("death");
+			scoreManager.RegisterKill(type);
 			DisableBoxes();
 		}
 

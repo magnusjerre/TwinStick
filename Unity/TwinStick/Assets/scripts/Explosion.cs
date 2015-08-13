@@ -67,7 +67,7 @@ public class Explosion : MonoBehaviour {
 		if (!ps.isPlaying) {
 			for (int i = 0; i < insideBlastRadius.Length; i++) {
 				if (insideBlastRadius[i] != null)
-					insideBlastRadius[i].GetComponent<IDamageable>().DoDamage(damage, Vector3.zero, Vector3.zero);
+					insideBlastRadius[i].GetComponent<IDamageable>().DoDamage(damage, Vector3.zero, Vector3.zero, ProjectileType.BULLET);
 			}
 			ps.Play ();
 			DisplayRadius(false);
