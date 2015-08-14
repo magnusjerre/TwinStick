@@ -155,6 +155,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
 				anim.SetTrigger ("death");
 				DisableBoxes ();
 				isDead = true;
+				GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().RegisterDeath(gameObject);
 			}
 		}
 	}

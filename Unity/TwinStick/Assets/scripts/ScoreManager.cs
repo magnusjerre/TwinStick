@@ -8,7 +8,9 @@ public class ScoreManager : MonoBehaviour {
 	public Pool pool;
 	public Canvas canvas;
 
-	Dictionary<ProjectileType, int> kills;
+	public Dictionary<ProjectileType, int> kills;
+
+	Dictionary<int, int> multiKills;
 	float timeSinceLastKill;
 	int multiKillCounter = 0;
 	float minTimeBetweenMedals = 0.25f;
@@ -17,12 +19,15 @@ public class ScoreManager : MonoBehaviour {
 	GameObject[] medalQueue;
 	int[] killCounterQueue;
 
-	// Use this for initialization
-	void Start () {
-		kills = new Dictionary<ProjectileType, int>();
+	void Awake() {
+		kills = new Dictionary<ProjectileType, int>(); 
+		multiKills = new Dictionary<int, int>();
 		pool.Setup ();
 		medalQueue = new GameObject[pool.size];
 		killCounterQueue = new int[pool.size];
+	}
+	// Use this for initialization
+	void Start () {
 		Reset ();
 	}
 	
@@ -49,12 +54,13 @@ public class ScoreManager : MonoBehaviour {
 	}
 
 	public void RegisterKill(ProjectileType type) {
-		if (!kills.ContainsKey (type))
-			kills.Add (type, 0);
 		kills [type] += 1;
 		Debug.Log ("Kill registered");
 		if (timeSinceLastKill < maxTimeBetweenKills) {
 			multiKillCounter++;
+			if (!multiKills.ContainsKey(multiKillCounter))
+			    multiKills.Add(multiKillCounter, 0);
+			multiKills[multiKillCounter] += 1;
 			GameObject obj = pool.FindAvailable();
 			if (obj != null) {
 				AddToQueue(obj, multiKillCounter);
@@ -69,10 +75,13 @@ public class ScoreManager : MonoBehaviour {
 	}
 
 	public void Reset() {
+		Debug.Log ("Reset ScoreMaanger");
 		multiKillCounter = 0;
 		timeSinceLastKill = maxTimeBetweenKills;
 		tbmTimer = minTimeBetweenMedals;
 		kills.Clear ();
+		kills.Add (ProjectileType.BULLET, 0);
+		kills.Add (ProjectileType.GRENADE, 0);
 	}
 
 	void AddToQueue(GameObject obj, int kills) {
@@ -84,9 +93,7 @@ public class ScoreManager : MonoBehaviour {
 		}
 	}
 
-	GameObject RemoveFromQueue() {
-		GameObject obj = medalQueue [0];
-		int kills = killCounterQueue [0];
+	void RemoveFromQueue() {
 
 		GameObject[] tempQueue = new GameObject[pool.size];
 		int[] tempKillCounterQueue = new int[pool.size];
@@ -97,6 +104,13 @@ public class ScoreManager : MonoBehaviour {
 		medalQueue = tempQueue;
 		killCounterQueue = tempKillCounterQueue;
 
-		return obj;
+	}
+
+	public int TotalKills() {
+		int sum = 0;
+		foreach (KeyValuePair<ProjectileType, int> pair in kills) {
+			sum += pair.Value;
+		}
+		return sum;
 	}
 }
