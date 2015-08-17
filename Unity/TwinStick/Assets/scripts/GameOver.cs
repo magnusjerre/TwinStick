@@ -9,6 +9,9 @@ public class GameOver : MonoBehaviour {
 	public Image medalArea;
 
 	public ScoreManager scoreManager;
+	public GameObject medalStaticPrefab;
+	public GridLayoutGroup glg;
+	public GridExtras gExtras;
 
 	void Awake() {
 		//scoreManager = GameObject.FindGameObjectWithTag ("ScoreManager").GetComponent<ScoreManager>();
@@ -22,5 +25,15 @@ public class GameOver : MonoBehaviour {
 		totalKills.text = "" + scoreManager.TotalKills ();
 		totalBullets.text = "" + scoreManager.kills [ProjectileType.BULLET];
 		totalGrenadeKills.text = "" + scoreManager.kills [ProjectileType.GRENADE];
+
+		int counter = 0;
+		foreach (KeyValuePair<int, int> pair in scoreManager.multiKills) {
+			if (counter < gExtras.MaxElements) {
+				GameObject medal = Instantiate(medalStaticPrefab);
+				medal.GetComponent<MedalSummary>().DisplayMedal("" + pair.Key, "x" + pair.Value);
+				medal.transform.SetParent(glg.gameObject.transform);
+				counter++;
+			}
+		}
 	}
 }

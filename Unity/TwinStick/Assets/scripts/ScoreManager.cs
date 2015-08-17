@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour {
 
 	public Dictionary<ProjectileType, int> kills;
 
-	Dictionary<int, int> multiKills;
+	public Dictionary<int, int> multiKills;
 	float timeSinceLastKill;
 	int multiKillCounter = 0;
 	float minTimeBetweenMedals = 0.25f;

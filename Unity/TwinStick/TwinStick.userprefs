@@ -1,12 +1,19 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\GameOver.cs">
+    <Files>
+      <File FileName="Assets\scripts\MedalSummary.cs" Line="13" Column="25" />
+      <File FileName="Assets\scripts\Medal.cs" Line="25" Column="32" />
+      <File FileName="Assets\scripts\IMeasurable.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\GameOver.cs" Line="17" Column="99" />
+      <File FileName="Assets\GridExtras.cs" Line="20" Column="61" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
             <Node name="scripts" expanded="True">
-              <Node name="Explosion.cs" selected="True" />
+              <Node name="GameOver.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -22,7 +29,11 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="E:\Documents\GitHub\TwinStick\Unity\TwinStick\Assets\scripts\MedalStats.cs" line="15" />
+      <Breakpoint file="E:\Documents\GitHub\TwinStick\Unity\TwinStick\Assets\scripts\Grid.cs" line="16" />
+      <Breakpoint file="E:\Documents\GitHub\TwinStick\Unity\TwinStick\Assets\scripts\MedalSummary.cs" line="11" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

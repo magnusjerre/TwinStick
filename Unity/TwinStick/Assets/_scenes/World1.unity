@@ -1584,15 +1584,88 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 113814, guid: 0c70de9c985dd664cb05de4da5500003, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11462316, guid: 0c70de9c985dd664cb05de4da5500003, type: 2}
       propertyPath: scoreManager
       value: 
       objectReference: {fileID: 1752277922}
+    - target: {fileID: 151576, guid: 0c70de9c985dd664cb05de4da5500003, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11462316, guid: 0c70de9c985dd664cb05de4da5500003, type: 2}
+      propertyPath: medalStats
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11462316, guid: 0c70de9c985dd664cb05de4da5500003, type: 2}
+      propertyPath: medalStaticPrefab
+      value: 
+      objectReference: {fileID: 128338, guid: cd1ec791e76579445a14e8d92fcea165, type: 2}
+    - target: {fileID: 11462316, guid: 0c70de9c985dd664cb05de4da5500003, type: 2}
+      propertyPath: glg
+      value: 
+      objectReference: {fileID: 1155282803}
+    - target: {fileID: 22409600, guid: 0c70de9c985dd664cb05de4da5500003, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 22409600, guid: 0c70de9c985dd664cb05de4da5500003, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 205
+      objectReference: {fileID: 0}
+    - target: {fileID: 11462316, guid: 0c70de9c985dd664cb05de4da5500003, type: 2}
+      propertyPath: gExtras
+      value: 
+      objectReference: {fileID: 1155282806}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0c70de9c985dd664cb05de4da5500003, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1155282801 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 151576, guid: 0c70de9c985dd664cb05de4da5500003, type: 2}
+  m_PrefabInternal: {fileID: 1155282800}
+--- !u!224 &1155282802 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 22409600, guid: 0c70de9c985dd664cb05de4da5500003,
+    type: 2}
+  m_PrefabInternal: {fileID: 1155282800}
+--- !u!114 &1155282803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1155282801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2095666955, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 100, y: 100}
+  m_Spacing: {x: 0, y: 0}
+  m_Constraint: 0
+  m_ConstraintCount: 2
+--- !u!114 &1155282806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1155282801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c54945c0c5aab164a9a007ba37466f98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 1155282802}
+  glg: {fileID: 1155282803}
 --- !u!1001 &1231672297
 Prefab:
   m_ObjectHideFlags: 0
