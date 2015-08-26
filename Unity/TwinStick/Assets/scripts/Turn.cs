@@ -38,18 +38,15 @@ public class Turn : MonoBehaviour {
 
 	public void TurnTowards(Transform target) 
 	{
-		if (IsFinished)
-		{
-			IsFinished = false;
-			elapsedTime = 0f;
-			startRotation = transform.rotation;
-			targetRotation = Quaternion.LookRotation(Diff (target.position, transform.position), new Vector3(0,1,0));
+		IsFinished = false;
+		elapsedTime = 0f;
+		startRotation = transform.rotation;
+		targetRotation = Quaternion.LookRotation(Diff (target.position, transform.position), new Vector3(0,1,0));
 
-			float degrees;
-			Vector3 outV;
-			Quaternion.FromToRotation(transform.forward, Diff (target.position, transform.position)).ToAngleAxis(out degrees, out outV);
-			turnTime = turnSpeed * (degrees / 360f);
-		}
+		float degrees;
+		Vector3 outV;
+		Quaternion.FromToRotation(transform.forward, Diff (target.position, transform.position)).ToAngleAxis(out degrees, out outV);
+		turnTime = turnSpeed * (degrees / 360f);
 	}
 
 	Vector3 Diff(Vector3 a, Vector3 b) 
@@ -59,6 +56,7 @@ public class Turn : MonoBehaviour {
 
 	public void Stop()
 	{
+		transform.rotation = targetRotation;
 		elapsedTime = 0f;
 		IsFinished = true;
 	}

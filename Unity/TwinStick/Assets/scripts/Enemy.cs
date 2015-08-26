@@ -13,6 +13,13 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 	public float minTimeBetweenDamage = 1f;*/
 	public Turn turn;
 	public GameObject lineOfSight;
+	public Transform[] navPoints;
+	int posCurrentNavPoint;
+	Transform navTarget;
+
+	public float waitTime = 2f;
+	float elapsedWaitTime = 0f;
+	bool isWaiting = false;
 
 	GameObject target;
 	bool targetWithinLineOfSight;
@@ -67,7 +74,26 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 		if (!gameObject.activeSelf)
 			return;
 
+		if (isWaiting) {
+			Debug.Log("elapsedWaiitingTime: " + elapsedWaitTime);
+			elapsedWaitTime += Time.deltaTime;
+		}
 
+		if (ShouldMoveToNextNavPoint ()) {
+			if (IsFacingMoveDirection(new Vector3(navTarget.position.x - transform.position.x, 0, navTarget.position.z - transform.position.z).normalized)) {
+				ResetWaiting(false);
+				agent.SetDestination(navTarget.position);
+				Debug.Log("Setting destination");
+			} else {
+				if (turn.IsFinished)
+					turn.TurnTowards(navTarget);
+			}
+		}
+
+		if (hasReachedTarget () && !isWaiting) {
+			ResetWaiting(true);
+			navTarget = NextNavPoint();
+		}
 
 		if (agent.velocity.sqrMagnitude > 0.1f) {
 			anim.SetBool ("isMoving", true);
@@ -75,6 +101,7 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 		} else {
 			anim.SetBool("isMoving", false);
 		}
+
 		/*
 		if (!gameObject.activeSelf)
 			return;
@@ -138,17 +165,40 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 		*/
 	}
 
+	Transform NextNavPoint() {
+		posCurrentNavPoint = (posCurrentNavPoint + 1) % navPoints.Length;
+		return navPoints [posCurrentNavPoint];
+	}
+
+	bool IsFacingMoveDirection(Vector3 moveDir) {
+		Debug.Log ("forward: " + transform.forward + ", moveDir: " + moveDir);
+		if (transform.forward == moveDir)
+			return true;
+		return false;
+	}
+
+	bool ShouldMoveToNextNavPoint() {
+		if (targetWithinLineOfSight)
+			return false;
+		if (elapsedWaitTime < waitTime)
+			return false;
+		if (agent.velocity.sqrMagnitude > 0.01f)
+			return false;
+		return true;
+	}
+
 	bool hasReachedTarget() {
-		/*
+	
 		if (agent.pathPending)
 			return false;
 
-		if (agent.velocity.sqrMagnitude > 0f)
+		if (agent.velocity.sqrMagnitude > 0.1f)
 			return false;
 
 		if (agent.hasPath)
 			return false;
-*/
+
+		Debug.Log ("target actually reached");
 		return true;
 	}
 
@@ -183,7 +233,11 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 
 	public void Reset() {
 		targetWithinLineOfSight = false;
-
+		agent.Stop ();
+		agent.ResetPath ();
+		ResetWaiting (true);
+		posCurrentNavPoint = 0;
+		navTarget = navPoints [0];
 		/*
 		isWaiting = true;
 		healthLeft = health;
@@ -194,25 +248,37 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 		turn.Stop ();*/
 	}
 
+	void ResetWaiting(bool waiting) {
+		isWaiting = waiting;
+		elapsedWaitTime = 0f;
+	}
+
 	#region IColliderListener implementation
 
 	public void OnColliderEnter (Collider owner, Collider collider) {
-		if (owner.gameObject == lineOfSight && collider.gameObject == target) {
-			targetWithinLineOfSight = true;
-			turn.Stop();
-			transform.LookAt(collider.gameObject.transform.position);
-			agent.destination = collider.gameObject.transform.position;
-		} else if (collider.gameObject == target && !targetWithinLineOfSight) {
-			turn.TurnTowards(target.transform);
+		if (collider.gameObject == target) {
+			ResetWaiting(false);
+			if (owner.gameObject == lineOfSight) {
+				targetWithinLineOfSight = true;
+				turn.Stop();
+				transform.LookAt(collider.gameObject.transform.position);
+				agent.destination = collider.gameObject.transform.position;
+			} else if (!targetWithinLineOfSight) {
+				turn.TurnTowards(target.transform);
+			}
 		}
 	}
 
 	public void OnColliderStay (Collider owner, Collider collider) {
-		if (owner.gameObject == lineOfSight && collider.gameObject == target) {
-			transform.LookAt(collider.gameObject.transform.position);
-			agent.destination = collider.gameObject.transform.position;
-		} else if (collider.gameObject == target && !targetWithinLineOfSight) {
-			turn.TurnTowards(target.transform);
+		if (collider.gameObject == target) {
+			ResetWaiting(false);
+			if (owner.gameObject == lineOfSight) {
+				turn.Stop();
+				transform.LookAt(collider.gameObject.transform.position);
+				agent.destination = collider.gameObject.transform.position;
+			} else if (!targetWithinLineOfSight) {
+				turn.TurnTowards(target.transform);
+			}
 		}
 	}
 
