@@ -1,18 +1,27 @@
 using UnityEngine;
 using System.Collections;
 
-public class Enemy : Owner, IDamageable {
+public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 
+	/*
 	public Transform[] navPoints;
 	public float waitTime = 2f;
 	public float health = 100f;
 	public ParticleSystem particleSystemPrefab;
 	public float timeToRemoveOnDeath = 3f;
 	public float damageDealt = 50f;
-	public float minTimeBetweenDamage = 1f;
+	public float minTimeBetweenDamage = 1f;*/
+	public Turn turn;
+	public GameObject lineOfSight;
 
-	Animator anim;
+	GameObject target;
+	bool targetWithinLineOfSight;
 	NavMeshAgent agent;
+	Animator anim;
+
+	/*
+	Vector3 posOfTarget;
+
 
 	float healthLeft;
 	float elapsedWaitTime = 0f;
@@ -29,16 +38,24 @@ public class Enemy : Owner, IDamageable {
 	CapsuleCollider cCollider;
 	ParticleSystem particles;
 	ScoreManager scoreManager;
+	*/
 
 	void Awake() {
-		transform.position = navPoints [0].position;
-		anim = GetComponent<Animator> ();
+
+		target = GameObject.FindGameObjectWithTag ("Player");
 		agent = GetComponent<NavMeshAgent> ();
+		anim = GetComponent<Animator> ();
+
+		Reset ();
+		/*
+		transform.position = navPoints [0].position;
 		target = GameObject.FindGameObjectWithTag ("Player");
 		cCollider = GetComponent<CapsuleCollider> ();
-		Reset ();
 		particles = (ParticleSystem)Instantiate (particleSystemPrefab);
 		scoreManager = GameObject.FindGameObjectWithTag ("ScoreManager").GetComponent<ScoreManager>();
+		//turn = new Turn ();
+		Reset ();
+		*/
 	}
 
 	// Use this for initialization
@@ -50,6 +67,19 @@ public class Enemy : Owner, IDamageable {
 		if (!gameObject.activeSelf)
 			return;
 
+
+
+		if (agent.velocity.sqrMagnitude > 0.1f) {
+			anim.SetBool ("isMoving", true);
+			anim.SetFloat ("yDir", agent.velocity.magnitude / agent.speed);
+		} else {
+			anim.SetBool("isMoving", false);
+		}
+		/*
+		if (!gameObject.activeSelf)
+			return;
+
+		turn.Update ();
 		damageTimer -= Time.deltaTime;
 
 		if (healthLeft < 1) {
@@ -62,6 +92,7 @@ public class Enemy : Owner, IDamageable {
 		}
 
 		if (playerInSight) {
+			turn.Stop();
 			Vector3 distance = target.transform.position - transform.position;
 			if (distance.sqrMagnitude < 0.5f && damageTimer < 0) {
 				target.GetComponent<IDamageable>().DoDamage(damageDealt, Vector3.zero, Vector3.zero, ProjectileType.BULLET);
@@ -71,19 +102,29 @@ public class Enemy : Owner, IDamageable {
 			playerFollowLeft -= Time.deltaTime;
 			if (playerFollowLeft < 0) {
 				playerFollowLeft = minPlayerFollowDt;
-				agent.destination = target.transform.position;
+				//agent.destination = target.transform.position;
 			}
 		}
 		if (!playerInSight && isWaiting) {
-			elapsedWaitTime += Time.deltaTime;
-			anim.SetBool ("isMoving", false);
-			anim.SetFloat("yDir", 0.75f);
 
-			if (elapsedWaitTime > waitTime) {
-				elapsedWaitTime = 0f;
-				currentNavTarget = (currentNavTarget + 1) % navPoints.Length;
-				agent.destination = navPoints [currentNavTarget].position;
-				isWaiting = false;
+			if (targetWithinEarShot) {
+
+				turn.NewState(transform, target.transform);
+				//transform.LookAt(posOfTarget);
+
+			} else {
+
+				elapsedWaitTime += Time.deltaTime;
+				anim.SetBool ("isMoving", false);
+				anim.SetFloat("yDir", 0.75f);
+
+				if (elapsedWaitTime > waitTime) {
+					elapsedWaitTime = 0f;
+					currentNavTarget = (currentNavTarget + 1) % navPoints.Length;
+					//agent.destination = navPoints [currentNavTarget].position;
+					isWaiting = false;
+				}
+
 			}
 
 		} else {
@@ -94,11 +135,11 @@ public class Enemy : Owner, IDamageable {
 		if (hasReachedTarget()) {
 			isWaiting = true;
 		}
-
+		*/
 	}
 
 	bool hasReachedTarget() {
-
+		/*
 		if (agent.pathPending)
 			return false;
 
@@ -107,29 +148,15 @@ public class Enemy : Owner, IDamageable {
 
 		if (agent.hasPath)
 			return false;
-
+*/
 		return true;
 	}
-
-
-	#region implemented abstract members of Owner
-	public override void NotifyTargetAcquired (GameObject target)
-	{
-		Debug.Log ("Target acquired!");
-		playerInSight = true;
-
-	}
-	public override void NotifyTargetLost (GameObject target)
-	{
-		Debug.Log ("Target lost...");
-		playerInSight = false;
-	}
-	#endregion
 
 	#region Damageable implementation
 
 	public void DoDamage (float damage, Vector3 point, Vector3 normal, ProjectileType type)
 	{
+		/*
 		healthLeft -= damage;
 
 		particles.transform.position = point;
@@ -140,23 +167,61 @@ public class Enemy : Owner, IDamageable {
 			anim.SetTrigger("death");
 			scoreManager.RegisterKill(type);
 			DisableBoxes();
+			//targetWithinEarShot = false;
+			turn.Stop();
 		}
-
+		*/
 	}
 
 	#endregion
 
-	void DisableBoxes() {
+	void DisableBoxes() {/*
 		cCollider.enabled = false;
-		agent.enabled = false;
+		//agent.enabled = false;
+		*/
 	}
 
 	public void Reset() {
+		targetWithinLineOfSight = false;
+
+		/*
 		isWaiting = true;
 		healthLeft = health;
 		deathTimer = timeToRemoveOnDeath;
 		cCollider.enabled = true;
-		agent.enabled = true;
+		//agent.enabled = true;
 		damageTimer = minTimeBetweenDamage;
+		turn.Stop ();*/
 	}
+
+	#region IColliderListener implementation
+
+	public void OnColliderEnter (Collider owner, Collider collider) {
+		if (owner.gameObject == lineOfSight && collider.gameObject == target) {
+			targetWithinLineOfSight = true;
+			turn.Stop();
+			transform.LookAt(collider.gameObject.transform.position);
+			agent.destination = collider.gameObject.transform.position;
+		} else if (collider.gameObject == target && !targetWithinLineOfSight) {
+			turn.TurnTowards(target.transform);
+		}
+	}
+
+	public void OnColliderStay (Collider owner, Collider collider) {
+		if (owner.gameObject == lineOfSight && collider.gameObject == target) {
+			transform.LookAt(collider.gameObject.transform.position);
+			agent.destination = collider.gameObject.transform.position;
+		} else if (collider.gameObject == target && !targetWithinLineOfSight) {
+			turn.TurnTowards(target.transform);
+		}
+	}
+
+	public void OnColliderExit (Collider owner, Collider collider)
+	{
+		if (owner.gameObject == lineOfSight && collider.gameObject == target) {
+			targetWithinLineOfSight = false;
+		}
+	}
+
+	#endregion
 }
