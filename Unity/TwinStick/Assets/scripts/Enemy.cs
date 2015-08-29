@@ -7,10 +7,14 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 	public Transform[] navPoints;
 	public float waitTime = 2f;
 	public float health = 100f;
-	public ParticleSystem particleSystemPrefab;
 	public float timeToRemoveOnDeath = 3f;
 	public float damageDealt = 50f;
 	public float minTimeBetweenDamage = 1f;*/
+
+	public ParticleSystem particleSystemPrefab;
+	public float health = 100f;
+	float healthLeft;
+
 	public Turn turn;
 	public GameObject lineOfSight;
 	public Transform[] navPoints;
@@ -25,6 +29,9 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 	bool targetWithinLineOfSight;
 	NavMeshAgent agent;
 	Animator anim;
+
+	ParticleSystem particles;
+	CapsuleCollider cCollider;
 
 	/*
 	Vector3 posOfTarget;
@@ -42,8 +49,6 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 	float playerFollowLeft = -1f;
 
 	GameObject target;
-	CapsuleCollider cCollider;
-	ParticleSystem particles;
 	ScoreManager scoreManager;
 	*/
 
@@ -52,13 +57,13 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 		target = GameObject.FindGameObjectWithTag ("Player");
 		agent = GetComponent<NavMeshAgent> ();
 		anim = GetComponent<Animator> ();
+		particles = (ParticleSystem)Instantiate (particleSystemPrefab);
+		cCollider = GetComponent<CapsuleCollider> ();
 
 		Reset ();
 		/*
 		transform.position = navPoints [0].position;
 		target = GameObject.FindGameObjectWithTag ("Player");
-		cCollider = GetComponent<CapsuleCollider> ();
-		particles = (ParticleSystem)Instantiate (particleSystemPrefab);
 		scoreManager = GameObject.FindGameObjectWithTag ("ScoreManager").GetComponent<ScoreManager>();
 		//turn = new Turn ();
 		Reset ();
@@ -171,7 +176,6 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 	}
 
 	bool IsFacingMoveDirection(Vector3 moveDir) {
-		Debug.Log ("forward: " + transform.forward + ", moveDir: " + moveDir);
 		if (transform.forward == moveDir)
 			return true;
 		return false;
@@ -206,7 +210,7 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 
 	public void DoDamage (float damage, Vector3 point, Vector3 normal, ProjectileType type)
 	{
-		/*
+
 		healthLeft -= damage;
 
 		particles.transform.position = point;
@@ -215,20 +219,20 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 
 		if (healthLeft < 1) {
 			anim.SetTrigger("death");
-			scoreManager.RegisterKill(type);
+			//scoreManager.RegisterKill(type);
 			DisableBoxes();
 			//targetWithinEarShot = false;
-			turn.Stop();
+			//turn.Stop();
 		}
-		*/
+
 	}
 
 	#endregion
 
-	void DisableBoxes() {/*
+	void DisableBoxes() {
 		cCollider.enabled = false;
 		//agent.enabled = false;
-		*/
+
 	}
 
 	public void Reset() {
@@ -238,6 +242,7 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 		ResetWaiting (true);
 		posCurrentNavPoint = 0;
 		navTarget = navPoints [0];
+		healthLeft = health;
 		/*
 		isWaiting = true;
 		healthLeft = health;
