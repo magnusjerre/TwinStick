@@ -40,7 +40,6 @@ public class Projectile : MonoBehaviour {
 
 	public virtual void Fire(Vector3 direction) {
 		body.AddForce (direction * speed);
-		//body.AddForce (transform.forward * speed);
 	}
 
 	public virtual void OnTriggerEnter(Collider collider) {

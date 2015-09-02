@@ -3,13 +3,6 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 
-	/*
-	public Transform[] navPoints;
-	public float waitTime = 2f;
-	public float health = 100f;
-	public float damageDealt = 50f;
-	public float minTimeBetweenDamage = 1f;*/
-
 	public SphereCollider earShotCollider;
 	public float timeToRemoveOnDeath = 3f;
 	float elapsedTimeToRemoveOnDeath;
@@ -41,24 +34,7 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 	ParticleSystem particles;
 	CapsuleCollider cCollider;
 
-	/*
-	Vector3 posOfTarget;
-
-
-	float healthLeft;
-	float elapsedWaitTime = 0f;
-	bool isWaiting = false;
-	int currentNavTarget = 0;
-	float deathTimer;
-	float damageTimer;
-
-	bool playerInSight = false;
-	float minPlayerFollowDt = 0.2f;
-	float playerFollowLeft = -1f;
-
-	GameObject target;
 	ScoreManager scoreManager;
-	*/
 
 	void Awake() {
 
@@ -67,15 +43,9 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 		anim = GetComponent<Animator> ();
 		particles = (ParticleSystem)Instantiate (particleSystemPrefab);
 		cCollider = GetComponent<CapsuleCollider> ();
+		scoreManager = GameObject.FindGameObjectWithTag ("ScoreManager").GetComponent<ScoreManager>();
 
 		Reset ();
-		/*
-		transform.position = navPoints [0].position;
-		target = GameObject.FindGameObjectWithTag ("Player");
-		scoreManager = GameObject.FindGameObjectWithTag ("ScoreManager").GetComponent<ScoreManager>();
-		//turn = new Turn ();
-		Reset ();
-		*/
 	}
 
 	// Use this for initialization
@@ -132,68 +102,7 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 			anim.SetLayerWeight (1, 0f);
 			handWeaponScript.doDamageAllowed = false;
 		}
-
-		/*
-		if (!gameObject.activeSelf)
-			return;
-
-		turn.Update ();
-		damageTimer -= Time.deltaTime;
-
-		if (healthLeft < 1) {
-			deathTimer -= Time.deltaTime;
-			if (deathTimer < 0f) {
-				Reset();
-				gameObject.SetActive(false);
-			}
-			return;
-		}
-
-		if (playerInSight) {
-			turn.Stop();
-			Vector3 distance = target.transform.position - transform.position;
-			if (distance.sqrMagnitude < 0.5f && damageTimer < 0) {
-				target.GetComponent<IDamageable>().DoDamage(damageDealt, Vector3.zero, Vector3.zero, ProjectileType.BULLET);
-				damageTimer = minTimeBetweenDamage;
-			}
-
-			playerFollowLeft -= Time.deltaTime;
-			if (playerFollowLeft < 0) {
-				playerFollowLeft = minPlayerFollowDt;
-				//agent.destination = target.transform.position;
-			}
-		}
-		if (!playerInSight && isWaiting) {
-
-			if (targetWithinEarShot) {
-
-				turn.NewState(transform, target.transform);
-				//transform.LookAt(posOfTarget);
-
-			} else {
-
-				elapsedWaitTime += Time.deltaTime;
-				anim.SetBool ("isMoving", false);
-				anim.SetFloat("yDir", 0.75f);
-
-				if (elapsedWaitTime > waitTime) {
-					elapsedWaitTime = 0f;
-					currentNavTarget = (currentNavTarget + 1) % navPoints.Length;
-					//agent.destination = navPoints [currentNavTarget].position;
-					isWaiting = false;
-				}
-
-			}
-
-		} else {
-			anim.SetBool ("isMoving", true);
-			anim.SetFloat("yDir", 0.75f);
-		}
-
-		if (hasReachedTarget()) {
-			isWaiting = true;
-		}
-		*/
+		
 	}
 
 	Transform NextNavPoint() {
@@ -248,10 +157,8 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 			anim.SetTrigger("death");
 			agent.Stop();
 			agent.ResetPath();
-			//scoreManager.RegisterKill(type);
+			scoreManager.RegisterKill(type);
 			DisableBoxes();
-			//targetWithinEarShot = false;
-			//turn.Stop();
 		}
 
 	}
@@ -263,7 +170,6 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 		agent.enabled = false;
 		lineOfSight.SetActive (false);
 		earShotCollider.enabled = false;
-		//agent.enabled = false;
 
 	}
 
@@ -282,14 +188,6 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 		cCollider.enabled = true;
 		lineOfSight.SetActive (true);
 		earShotCollider.enabled = true;
-				/*
-		isWaiting = true;
-		healthLeft = health;
-		deathTimer = timeToRemoveOnDeath;
-		cCollider.enabled = true;
-		//agent.enabled = true;
-		damageTimer = minTimeBetweenDamage;
-		turn.Stop ();*/
 	}
 
 	void ResetWaiting(bool waiting) {
