@@ -59,8 +59,6 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 
 		if (healthLeft < 1) {
 			if (elapsedTimeToRemoveOnDeath > timeToRemoveOnDeath) {
-				Debug.Log("active self set to false");
-				Debug.Log("healthLeft: " + healthLeft + ", elapsedTimeToRemoveOnDeath: " + elapsedTimeToRemoveOnDeath);
 				Reset();
 				gameObject.SetActive(false);
 			} else {
@@ -70,7 +68,6 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 		}
 
 		if (isWaiting) {
-			Debug.Log("elapsedWaiitingTime: " + elapsedWaitTime);
 			elapsedWaitTime += Time.deltaTime;
 		}
 
@@ -78,7 +75,6 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 			if (IsFacingMoveDirection(new Vector3(navTarget.position.x - transform.position.x, 0, navTarget.position.z - transform.position.z).normalized)) {
 				ResetWaiting(false);
 				agent.SetDestination(navTarget.position);
-				Debug.Log("Setting destination");
 			} else {
 				if (turn.IsFinished)
 					turn.TurnTowards(navTarget);
@@ -136,8 +132,7 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 
 		if (agent.hasPath)
 			return false;
-
-		Debug.Log ("target actually reached");
+		
 		return true;
 	}
 

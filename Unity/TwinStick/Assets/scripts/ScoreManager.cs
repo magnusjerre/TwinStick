@@ -51,6 +51,7 @@ public class ScoreManager : MonoBehaviour {
 				Debug.Log("reset tbmTimer: " + tbmTimer);
 			}
 		}
+
 	}
 
 	public void RegisterKill(ProjectileType type) {

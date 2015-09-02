@@ -1584,7 +1584,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 113814, guid: 0c70de9c985dd664cb05de4da5500003, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11462316, guid: 0c70de9c985dd664cb05de4da5500003, type: 2}
       propertyPath: scoreManager

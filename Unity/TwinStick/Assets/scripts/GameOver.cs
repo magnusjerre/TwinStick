@@ -22,6 +22,7 @@ public class GameOver : MonoBehaviour {
 	}
 	
 	public void UpdateScore() {
+		Debug.Log ("Update score");
 		totalKills.text = "" + scoreManager.TotalKills ();
 		totalBullets.text = "" + scoreManager.kills [ProjectileType.BULLET];
 		totalGrenadeKills.text = "" + scoreManager.kills [ProjectileType.GRENADE];

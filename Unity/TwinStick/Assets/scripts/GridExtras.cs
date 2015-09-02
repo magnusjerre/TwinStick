@@ -14,7 +14,7 @@ public class GridExtras : MonoBehaviour {
 	}
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		int maxHorizontalElements = (int) (rectTransform.rect.width / glg.cellSize.x);
 		int maxVerticalElements = (int)(rectTransform.rect.height / glg.cellSize.y);
 		MaxElements = maxHorizontalElements * maxVerticalElements;
