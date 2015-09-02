@@ -57,6 +57,7 @@
      <Compile Include="Assets\scripts\Grenade.cs" />
      <Compile Include="Assets\scripts\GrenadeThrowMechanism.cs" />
      <Compile Include="Assets\scripts\GridExtras.cs" />
+     <Compile Include="Assets\scripts\HandWeapon.cs" />
      <Compile Include="Assets\scripts\IAimable.cs" />
      <Compile Include="Assets\scripts\IColliderListener.cs" />
      <Compile Include="Assets\scripts\IDamageable.cs" />

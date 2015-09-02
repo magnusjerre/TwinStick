@@ -7,13 +7,21 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 	public Transform[] navPoints;
 	public float waitTime = 2f;
 	public float health = 100f;
-	public float timeToRemoveOnDeath = 3f;
 	public float damageDealt = 50f;
 	public float minTimeBetweenDamage = 1f;*/
 
+	public SphereCollider earShotCollider;
+	public float timeToRemoveOnDeath = 3f;
+	float elapsedTimeToRemoveOnDeath;
 	public ParticleSystem particleSystemPrefab;
 	public float health = 100f;
 	float healthLeft;
+
+	//Club swing variables
+	float minTimeBetweenSwings = 0.667f;
+	float timeSinceLastSwing;
+	public float swingRange = 1f;
+	public HandWeapon handWeaponScript;
 
 	public Turn turn;
 	public GameObject lineOfSight;
@@ -79,6 +87,18 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 		if (!gameObject.activeSelf)
 			return;
 
+		if (healthLeft < 1) {
+			if (elapsedTimeToRemoveOnDeath > timeToRemoveOnDeath) {
+				Debug.Log("active self set to false");
+				Debug.Log("healthLeft: " + healthLeft + ", elapsedTimeToRemoveOnDeath: " + elapsedTimeToRemoveOnDeath);
+				Reset();
+				gameObject.SetActive(false);
+			} else {
+				elapsedTimeToRemoveOnDeath += Time.deltaTime;
+			}
+			return;
+		}
+
 		if (isWaiting) {
 			Debug.Log("elapsedWaiitingTime: " + elapsedWaitTime);
 			elapsedWaitTime += Time.deltaTime;
@@ -105,6 +125,12 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 			anim.SetFloat ("yDir", agent.velocity.magnitude / agent.speed);
 		} else {
 			anim.SetBool("isMoving", false);
+		}
+
+		timeSinceLastSwing += Time.deltaTime;
+		if (timeSinceLastSwing > minTimeBetweenSwings) {
+			anim.SetLayerWeight (1, 0f);
+			handWeaponScript.doDamageAllowed = false;
 		}
 
 		/*
@@ -218,7 +244,10 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 		particles.Play ();
 
 		if (healthLeft < 1) {
+			anim.SetLayerWeight(1, 0f);
 			anim.SetTrigger("death");
+			agent.Stop();
+			agent.ResetPath();
 			//scoreManager.RegisterKill(type);
 			DisableBoxes();
 			//targetWithinEarShot = false;
@@ -231,19 +260,29 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 
 	void DisableBoxes() {
 		cCollider.enabled = false;
+		agent.enabled = false;
+		lineOfSight.SetActive (false);
+		earShotCollider.enabled = false;
 		//agent.enabled = false;
 
 	}
 
 	public void Reset() {
 		targetWithinLineOfSight = false;
+		agent.enabled = true;
 		agent.Stop ();
 		agent.ResetPath ();
 		ResetWaiting (true);
 		posCurrentNavPoint = 0;
 		navTarget = navPoints [0];
 		healthLeft = health;
-		/*
+		timeSinceLastSwing = minTimeBetweenSwings;
+		anim.SetLayerWeight (1, 0f);
+		elapsedTimeToRemoveOnDeath = 0f;
+		cCollider.enabled = true;
+		lineOfSight.SetActive (true);
+		earShotCollider.enabled = true;
+				/*
 		isWaiting = true;
 		healthLeft = health;
 		deathTimer = timeToRemoveOnDeath;
@@ -256,6 +295,10 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 	void ResetWaiting(bool waiting) {
 		isWaiting = waiting;
 		elapsedWaitTime = 0f;
+	}
+
+	bool IsWithinSwingRange(Vector3 a, Vector3 b, float sqrDist) {
+		return (a - b).sqrMagnitude < sqrDist;
 	}
 
 	#region IColliderListener implementation
@@ -281,6 +324,12 @@ public class Enemy : MonoBehaviour, IDamageable, IColliderListener {
 				turn.Stop();
 				transform.LookAt(collider.gameObject.transform.position);
 				agent.destination = collider.gameObject.transform.position;
+				if (IsWithinSwingRange(target.transform.position, transform.position, swingRange)) {
+					anim.SetLayerWeight(1, 1f);
+					anim.SetTrigger("hit");
+					timeSinceLastSwing = 0f;
+					handWeaponScript.doDamageAllowed = true;
+				}
 			} else if (!targetWithinLineOfSight) {
 				turn.TurnTowards(target.transform);
 			}

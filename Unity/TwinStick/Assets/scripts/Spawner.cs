@@ -30,6 +30,7 @@ public class Spawner : MonoBehaviour {
 		if (enemy != null) {
 			enemy.transform.position = spawnLocation.position;
 			enemy.transform.rotation = spawnLocation.rotation;
+			enemy.GetComponent<Enemy>().Reset();
 		}
 	}
 
